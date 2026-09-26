@@ -397,9 +397,10 @@
   mode: restart
 - id: git_config_sync
   alias: Git · /config saatlik yedek (GitHub)
-  description: Her saat :07de /config değişikliklerini emirgu-debug/ha-config reposuna
+  description: Her saat :07de /config degisikliklerini emirgu-debug/ha-config reposuna
     commit + push eder (shell_command.git_sync, whitelist .gitignore). Hata olursa
-    persistent notification düşer. Bkz. claude/git-config-repo.md
+    persistent notification (git_sync_error) duser. GitHub token 27 Eyl yenilendi.
+    Bkz. claude/git-config-repo.md
   triggers:
   - trigger: time_pattern
     minutes: 7
