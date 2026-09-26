@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_boolean",
+  "data": {
+    "items": [
+      {
+        "id": "am07_swing_acik",
+        "name": "AM07 Swing Acik",
+        "icon": "mdi:arrow-oscillating"
+      },
+      {
+        "id": "adaptif_isik",
+        "name": "Adaptif Isik",
+        "icon": "mdi:theme-light-dark"
+      },
+      {
+        "id": "leyla_kamera_canli_izleme",
+        "name": "Leyla Kamera Canli Izleme",
+        "icon": "mdi:cctv"
+      },
+      {
+        "id": "giris_kamera_canli_izleme",
+        "name": "Giris Kamera Canli Izleme",
+        "icon": "mdi:cctv"
+      }
+    ]
+  }
+}

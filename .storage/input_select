@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "minor_version": 2,
+  "key": "input_select",
+  "data": {
+    "items": [
+      {
+        "id": "salon_klima_fan_hizi",
+        "name": "Salon Klima Fan Hızı",
+        "options": [
+          "auto",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "initial": "2"
+      },
+      {
+        "id": "leyla_klima_fan_hizi",
+        "name": "Leyla Klima Fan Hızı",
+        "options": [
+          "auto",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "initial": "2"
+      },
+      {
+        "id": "oda_klima_fan_hizi",
+        "name": "Oda Klima Fan Hızı",
+        "options": [
+          "auto",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "initial": "2"
+      },
+      {
+        "id": "salon_klima_mod",
+        "name": "Salon Klima Mod",
+        "icon": "mdi:air-conditioner",
+        "options": [
+          "off",
+          "cool"
+        ]
+      },
+      {
+        "id": "leyla_klima_mod",
+        "name": "Leyla Klima Mod",
+        "icon": "mdi:air-conditioner",
+        "options": [
+          "off",
+          "cool"
+        ]
+      },
+      {
+        "id": "oda_klima_mod",
+        "name": "Oda Klima Mod",
+        "icon": "mdi:air-conditioner",
+        "options": [
+          "off",
+          "cool"
+        ]
+      }
+    ]
+  }
+}

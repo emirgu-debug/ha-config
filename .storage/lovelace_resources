@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_resources",
+  "data": {
+    "items": [
+      {
+        "id": "f41a37db71bb43dba68cc3c0eca8a728",
+        "url": "/hacsfiles/mushroom-strategy/mushroom-strategy.js?hacstag=619284862320",
+        "type": "module"
+      },
+      {
+        "id": "537d49fc153b4806ad169fe7a2c60095",
+        "url": "/hacsfiles/weather-radar-card/weather-radar-card.js?hacstag=487680971372",
+        "type": "module"
+      },
+      {
+        "id": "492bff8565a2428dbb62ed4236576c04",
+        "url": "/hacsfiles/dwains-dashboard-next/dwains-dashboard-next.js?hacstag=1274321619180",
+        "type": "module"
+      },
+      {
+        "id": "f04abf9538a24374a75125e432fa31a5",
+        "url": "/hacsfiles/homeassistant-fe-tesla/tesla-card.js?hacstag=642725487104",
+        "type": "module"
+      },
+      {
+        "id": "1a455482ef7144b38fc186b0183a59df",
+        "url": "/hacsfiles/vehicle-status-card/vehicle-status-card.js?hacstag=8593716631261",
+        "type": "module"
+      },
+      {
+        "id": "73f422c92e3f4b149d886f1169863acb",
+        "url": "/hacsfiles/ha-floorplan/floorplan.js?hacstag=188323494115",
+        "type": "module"
+      },
+      {
+        "id": "b67f39ff1dcd46428958f57b473aaec6",
+        "url": "/hacsfiles/lovelace-card-mod/card-mod.js?hacstag=190927524421",
+        "type": "module"
+      },
+      {
+        "id": "110685becb1644e097cfe796e83681e5",
+        "url": "/hacsfiles/button-card/button-card.js?hacstag=146194325701",
+        "type": "module"
+      },
+      {
+        "id": "110885a0ecf24d8b8e961b937c847e67",
+        "url": "https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&display=swap",
+        "type": "css"
+      },
+      {
+        "id": "2ec18fdebc8142a9ac8ceaa9fb353aac",
+        "url": "/hacsfiles/Bubble-Card/bubble-card.js?hacstag=680112919341",
+        "type": "module"
+      },
+      {
+        "id": "6947df12c44f48718358391d2ac4df68",
+        "url": "/hacsfiles/Google-Map-Card/google-maps-card.js?hacstag=1005504308602",
+        "type": "module"
+      },
+      {
+        "id": "6e4e712c722f4187a08a2d0952d9c0ae",
+        "url": "/webrtc/webrtc-camera.js?v=v3.6.1",
+        "type": "module"
+      },
+      {
+        "id": "bd265ccb89e3455ba1728733740b48d6",
+        "url": "/hacsfiles/tesla-fleet-homeassistant/tesla-fleet-card.js?hacstag=13516228621112",
+        "type": "module"
+      }
+    ]
+  }
+}

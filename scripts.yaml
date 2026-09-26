@@ -1,0 +1,584 @@
+ac_set_temperature:
+  alias: AC Set Temperature
+  description: ''
+  mode: single
+  sequence:
+  - variables:
+      target_entity: '{{ ''text.salon_klima_ir_code_to_send'' if unit == ''salon''
+        else (''text.leyla_klima_ir_code_to_send'' if unit == ''leyla'' else ''text.oda_klima_ir_code_to_send'')
+        }}'
+      temp_helper: '{{ ''input_number.salon_klima_sicaklik'' if unit == ''salon''
+        else (''input_number.leyla_klima_sicaklik'' if unit == ''leyla'' else ''input_number.oda_klima_sicaklik'')
+        }}'
+      fan_helper: '{{ ''input_select.salon_klima_fan_hizi'' if unit == ''salon'' else
+        (''input_select.leyla_klima_fan_hizi'' if unit == ''leyla'' else ''input_select.oda_klima_fan_hizi'')
+        }}'
+      code_map:
+        18_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgC9vhAxPgBy/gCTvgBXuAv8AfgAPAC0AH
+        '18_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgB9vhD1/gCwPgBSfgAbeAw8Aj4AUH
+        '18_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgD9vgBafgAS/gCTvgBXuA5+ADI+AFBw==
+        '18_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgB9vhAw/gCy/gCTvgB3vAG+ANBw==
+        '18_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgC9vgCafgAS/gCTvgBXuAv0Ab4A0H
+        '18_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgB9vhDWPgAS/gCTvgB3tAF4ADwAvgAwc=
+        20_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+AHN+EDE+ABV+AJA+AFy8DvwBvgAQPgA28=
+        '20_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+AHa+ELX+ALA+AFJ+ABt4DrwCPgBQc=
+        '20_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+ALN+AFp4Ar4AcD4AkjwOfgA1/gBQc=
+        '20_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+ALa+AFp4Ar4AcD4Akj4AUrgPPgAQtABw==
+        '20_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+AHN+AJp4Ar4AcD4AkjwL/AH+ADZ4AH
+        '20_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+AHa+AJp4Ar4AcD4Akj4Adb4AULQAc=
+        22_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+AHN+EDE+ADL+AHA+AFy8Dv4AsngANACw==
+        '22_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+AHa+ELX+ALA+AFJ+ABt4DDwF/gAQtABw==
+        '22_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+ALN+AFp4Av4AcD4AkjwOfgA1/gAQtABw==
+        '22_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+ALa+AFp4Av4AcD4Akj4AdbgAPAD0AH
+        '22_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+AHN+AJp4Av4AcD4AkjwL/AW4ADwA9ABw==
+        '22_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+AHa+AJp4Av4AcD4AkjgAeAV+ABA8ATQAc=
+        24_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+AHN+EDE+ABV+AJA+AFy8DvwBvgAyfgAQ8=
+        '24_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+AHa+ELX+ALA+AFJ+ABt+ABW4ADwBNABw==
+        '24_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+ALN+AFp0Af4AkD4AkjwOfgBQPAb0AH
+        '24_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+ALa+AFp0Af4AkD4Akj4A0rwGtACw==
+        '24_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+AHN+AJp0Af4AkD4AkjwL/gByeAA0AL
+        '24_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+AHa+AJp0Af4AkD4Akj4AFb4AUn4AET
+        26_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhCR/gCS/gAQPgBcvgA0vAH+ABB8AL
+        '26_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhEV/gCwPgBSfgAbeAT+ADJ+ABEw==
+        '26_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhDzfgAy/gAQPgCSPA5+AHJ+ABEw==
+        '26_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhBQ/gDS/gAQPgCSPgASuAU+ABC8AP
+        '26_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhD6PgAy/gAQPgCSPAS0Ab4AMn4AEP
+        '26_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhD2PgAy/gAQPgCSOAB4Dr4AMn4AEP
+        28_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AFN+EDE+ABV+AJA+AFy+ADS4Bf4AsL
+        '28_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AFa+ELX+ALA+AFJ+ABt4Dr4AMn4AEP
+        '28_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AJN+AFp8Ar4AUD4AkjwOfgA1/gBQ8=
+        '28_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AJa+AFp8Ar4AUD4Akj4AUrwGOA+4AL
+        '28_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AFN+AJp8Ar4AUD4AkjwEvAH+ABB8AL
+        '28_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AFa+AJp8Ar4AUD4Akj4AVb4AMHwAs=
+        30_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AFN+EDE+ADL+AHA+AFy+ADS+ADI+ABA0AP
+        '30_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AFa+ELX+ALA+AFJ+ABt4BP4AUHwAs=
+        '30_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AJN+AFp4Av4AcD4AkjwOfgA1+AB8AL
+        '30_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AJa+AFp4Av4AcD4Akj4AVbgFfgBQs=
+        '30_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AFN+AJp4Av4AcD4AkjwEuAW+ALCw==
+        '30_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AFa+AJp4Av4AcD4AkjgAeA68Bf4AUL
+      mode_helper: '{{ ''input_select.salon_klima_mod'' if unit == ''salon'' else
+        (''input_select.leyla_klima_mod'' if unit == ''leyla'' else ''input_select.oda_klima_mod'')
+        }}'
+      stamp_helper: '{{ ''input_datetime.salon_klima_son_komut'' if unit == ''salon''
+        else (''input_datetime.leyla_klima_son_komut'' if unit == ''leyla'' else ''input_datetime.oda_klima_son_komut'')
+        }}'
+  - action: input_number.set_value
+    target:
+      entity_id: '{{ temp_helper }}'
+    data:
+      value: '{{ temp }}'
+  - action: text.set_value
+    target:
+      entity_id: '{{ target_entity }}'
+    data:
+      value: '{{ code_map[(temp|string) ~ ''_'' ~ states(fan_helper)] }}'
+  - action: input_select.select_option
+    target:
+      entity_id: '{{ mode_helper }}'
+    data:
+      option: cool
+  - action: input_datetime.set_datetime
+    target:
+      entity_id: '{{ stamp_helper }}'
+    data:
+      timestamp: '{{ now().timestamp() }}'
+ac_turn_off:
+  alias: AC Turn Off
+  description: ''
+  mode: single
+  sequence:
+  - variables:
+      target_entity: '{{ ''text.salon_klima_ir_code_to_send'' if unit == ''salon''
+        else (''text.leyla_klima_ir_code_to_send'' if unit == ''leyla'' else ''text.oda_klima_ir_code_to_send'')
+        }}'
+      mode_helper: '{{ ''input_select.salon_klima_mod'' if unit == ''salon'' else
+        (''input_select.leyla_klima_mod'' if unit == ''leyla'' else ''input_select.oda_klima_mod'')
+        }}'
+      stamp_helper: '{{ ''input_datetime.salon_klima_son_komut'' if unit == ''salon''
+        else (''input_datetime.leyla_klima_son_komut'' if unit == ''leyla'' else ''input_datetime.oda_klima_son_komut'')
+        }}'
+  - action: text.set_value
+    target:
+      entity_id: '{{ target_entity }}'
+    data:
+      value: C+0TZwibAfoGmwG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4B8D4A+DwAMGqHPtE/oGcSAbAHHgBjfgBQ/gBedAL+ADC8AD4AU34AtD4AUDQB+AA+ABg4AzwAvgBxfgDS/gBQvAJ4Cj4AM34AMH4AcL4SlP4A8f4BtD4R+rwAc=
+  - action: input_select.select_option
+    target:
+      entity_id: '{{ mode_helper }}'
+    data:
+      option: 'off'
+  - action: input_datetime.set_datetime
+    target:
+      entity_id: '{{ stamp_helper }}'
+    data:
+      timestamp: '{{ now().timestamp() }}'
+ac_set_fan:
+  alias: AC Set Fan
+  description: Set fan speed for a Daikin IR unit (salon/leyla/oda). Sends the code
+    for current temp + new fan, marks unit as cool.
+  mode: single
+  sequence:
+  - variables:
+      target_entity: '{{ ''text.salon_klima_ir_code_to_send'' if unit == ''salon''
+        else (''text.leyla_klima_ir_code_to_send'' if unit == ''leyla'' else ''text.oda_klima_ir_code_to_send'')
+        }}'
+      temp_helper: '{{ ''input_number.salon_klima_sicaklik'' if unit == ''salon''
+        else (''input_number.leyla_klima_sicaklik'' if unit == ''leyla'' else ''input_number.oda_klima_sicaklik'')
+        }}'
+      fan_helper: '{{ ''input_select.salon_klima_fan_hizi'' if unit == ''salon'' else
+        (''input_select.leyla_klima_fan_hizi'' if unit == ''leyla'' else ''input_select.oda_klima_fan_hizi'')
+        }}'
+      code_map:
+        18_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgC9vhAxPgBy/gCTvgBXuAv8AfgAPAC0AH
+        '18_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgB9vhD1/gCwPgBSfgAbeAw8Aj4AUH
+        '18_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgD9vgBafgAS/gCTvgBXuA5+ADI+AFBw==
+        '18_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgB9vhAw/gCy/gCTvgB3vAG+ANBw==
+        '18_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgC9vgCafgAS/gCTvgBXuAv0Ab4A0H
+        '18_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgB9vhDWPgAS/gCTvgB3tAF4ADwAvgAwc=
+        20_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+AHN+EDE+ABV+AJA+AFy8DvwBvgAQPgA28=
+        '20_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+AHa+ELX+ALA+AFJ+ABt4DrwCPgBQc=
+        '20_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+ALN+AFp4Ar4AcD4AkjwOfgA1/gBQc=
+        '20_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+ALa+AFp4Ar4AcD4Akj4AUrgPPgAQtABw==
+        '20_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+AHN+AJp4Ar4AcD4AkjwL/AH+ADZ4AH
+        '20_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+AHa+AJp4Ar4AcD4Akj4Adb4AULQAc=
+        22_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+AHN+EDE+ADL+AHA+AFy8Dv4AsngANACw==
+        '22_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+AHa+ELX+ALA+AFJ+ABt4DDwF/gAQtABw==
+        '22_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+ALN+AFp4Av4AcD4AkjwOfgA1/gAQtABw==
+        '22_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+ALa+AFp4Av4AcD4Akj4AdbgAPAD0AH
+        '22_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+AHN+AJp4Av4AcD4AkjwL/AW4ADwA9ABw==
+        '22_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+AHa+AJp4Av4AcD4AkjgAeAV+ABA8ATQAc=
+        24_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+AHN+EDE+ABV+AJA+AFy8DvwBvgAyfgAQ8=
+        '24_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+AHa+ELX+ALA+AFJ+ABt+ABW4ADwBNABw==
+        '24_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+ALN+AFp0Af4AkD4AkjwOfgBQPAb0AH
+        '24_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+ALa+AFp0Af4AkD4Akj4A0rwGtACw==
+        '24_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+AHN+AJp0Af4AkD4AkjwL/gByeAA0AL
+        '24_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+AHa+AJp0Af4AkD4Akj4AFb4AUn4AET
+        26_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhCR/gCS/gAQPgBcvgA0vAH+ABB8AL
+        '26_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhEV/gCwPgBSfgAbeAT+ADJ+ABEw==
+        '26_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhDzfgAy/gAQPgCSPA5+AHJ+ABEw==
+        '26_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhBQ/gDS/gAQPgCSPgASuAU+ABC8AP
+        '26_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhD6PgAy/gAQPgCSPAS0Ab4AMn4AEP
+        '26_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhD2PgAy/gAQPgCSOAB4Dr4AMn4AEP
+        28_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AFN+EDE+ABV+AJA+AFy+ADS4Bf4AsL
+        '28_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AFa+ELX+ALA+AFJ+ABt4Dr4AMn4AEP
+        '28_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AJN+AFp8Ar4AUD4AkjwOfgA1/gBQ8=
+        '28_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AJa+AFp8Ar4AUD4Akj4AUrwGOA+4AL
+        '28_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AFN+AJp8Ar4AUD4AkjwEvAH+ABB8AL
+        '28_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AFa+AJp8Ar4AUD4Akj4AVb4AMHwAs=
+        30_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AFN+EDE+ADL+AHA+AFy+ADS+ADI+ABA0AP
+        '30_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AFa+ELX+ALA+AFJ+ABt4BP4AUHwAs=
+        '30_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AJN+AFp4Av4AcD4AkjwOfgA1+AB8AL
+        '30_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AJa+AFp4Av4AcD4Akj4AVbgFfgBQs=
+        '30_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AFN+AJp4Av4AcD4AkjwEuAW+ALCw==
+        '30_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AFa+AJp4Av4AcD4AkjgAeA68Bf4AUL
+      mode_helper: '{{ ''input_select.salon_klima_mod'' if unit == ''salon'' else
+        (''input_select.leyla_klima_mod'' if unit == ''leyla'' else ''input_select.oda_klima_mod'')
+        }}'
+      stamp_helper: '{{ ''input_datetime.salon_klima_son_komut'' if unit == ''salon''
+        else (''input_datetime.leyla_klima_son_komut'' if unit == ''leyla'' else ''input_datetime.oda_klima_son_komut'')
+        }}'
+  - action: input_select.select_option
+    target:
+      entity_id: '{{ fan_helper }}'
+    data:
+      option: '{{ fan }}'
+  - action: text.set_value
+    target:
+      entity_id: '{{ target_entity }}'
+    data:
+      value: '{{ code_map[(states(temp_helper)|int|string) ~ ''_'' ~ fan] }}'
+  - action: input_select.select_option
+    target:
+      entity_id: '{{ mode_helper }}'
+    data:
+      option: cool
+  - action: input_datetime.set_datetime
+    target:
+      entity_id: '{{ stamp_helper }}'
+    data:
+      timestamp: '{{ now().timestamp() }}'
+ac_apply_state:
+  alias: AC Apply State
+  description: 'Set temperature and fan together with a single IR send (used by panel
+    presets). unit: salon/leyla/oda, temp: 18-30 even, fan: auto/1-5.'
+  mode: queued
+  max: 5
+  fields:
+    unit:
+      name: Unit
+      required: true
+      selector:
+        select:
+          options:
+          - salon
+          - leyla
+          - oda
+    temp:
+      name: Temperature
+      required: true
+      selector:
+        number:
+          min: 18
+          max: 30
+          step: 2
+          unit_of_measurement: °C
+    fan:
+      name: Fan
+      required: true
+      selector:
+        select:
+          options:
+          - auto
+          - '1'
+          - '2'
+          - '3'
+          - '4'
+          - '5'
+  sequence:
+  - variables:
+      code_map:
+        18_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgC9vhAxPgBy/gCTvgBXuAv8AfgAPAC0AH
+        '18_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgB9vhD1/gCwPgBSfgAbeAw8Aj4AUH
+        '18_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgD9vgBafgAS/gCTvgBXuA5+ADI+AFBw==
+        '18_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgB9vhAw/gCy/gCTvgB3vAG+ANBw==
+        '18_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgC9vgCafgAS/gCTvgBXuAv0Ab4A0H
+        '18_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AngAPgB9vhDWPgAS/gCTvgB3tAF4ADwAvgAwc=
+        20_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+AHN+EDE+ABV+AJA+AFy8DvwBvgAQPgA28=
+        '20_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+AHa+ELX+ALA+AFJ+ABt4DrwCPgBQc=
+        '20_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+ALN+AFp4Ar4AcD4AkjwOfgA1/gBQc=
+        '20_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+ALa+AFp4Ar4AcD4Akj4AUrgPPgAQtABw==
+        '20_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+AHN+AJp4Ar4AcD4AkjwL/AH+ADZ4AH
+        '20_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGeAk+AHa+AJp4Ar4AcD4Akj4Adb4AULQAc=
+        22_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+AHN+EDE+ADL+AHA+AFy8Dv4AsngANACw==
+        '22_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+AHa+ELX+ALA+AFJ+ABt4DDwF/gAQtABw==
+        '22_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+ALN+AFp4Av4AcD4AkjwOfgA1/gAQtABw==
+        '22_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+ALa+AFp4Av4AcD4Akj4AdbgAPAD0AH
+        '22_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+AHN+AJp4Av4AcD4AkjwL/AW4ADwA9ABw==
+        '22_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI+Ak+AHa+AJp4Av4AcD4AkjgAeAV+ABA8ATQAc=
+        24_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+AHN+EDE+ABV+AJA+AFy8DvwBvgAyfgAQ8=
+        '24_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+AHa+ELX+ALA+AFJ+ABt+ABW4ADwBNABw==
+        '24_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+ALN+AFp0Af4AkD4AkjwOfgBQPAb0AH
+        '24_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+ALa+AFp0Af4AkD4Akj4A0rwGtACw==
+        '24_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+AHN+AJp0Af4AkD4AkjwL/gByeAA0AL
+        '24_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngI+Ak+AHa+AJp0Af4AkD4Akj4AFb4AUn4AET
+        26_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhCR/gCS/gAQPgBcvgA0vAH+ABB8AL
+        '26_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhEV/gCwPgBSfgAbeAT+ADJ+ABEw==
+        '26_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhDzfgAy/gAQPgCSPA5+AHJ+ABEw==
+        '26_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhBQ/gDS/gAQPgCSPgASuAU+ABC8AP
+        '26_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhD6PgAy/gAQPgCSPAS0Ab4AMn4AEP
+        '26_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnwAPgA3PhD2PgAy/gAQPgCSOAB4Dr4AMn4AEP
+        28_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AFN+EDE+ABV+AJA+AFy+ADS4Bf4AsL
+        '28_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AFa+ELX+ALA+AFJ+ABt4Dr4AMn4AEP
+        '28_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AJN+AFp8Ar4AUD4AkjwOfgA1/gBQ8=
+        '28_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AJa+AFp8Ar4AUD4Akj4AUrwGOA+4AL
+        '28_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AFN+AJp8Ar4AUD4AkjwEvAH+ABB8AL
+        '28_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado0AngGfAo+AFa+AJp8Ar4AUD4Akj4AVb4AMHwAs=
+        30_auto: C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AFN+EDE+ADL+AHA+AFy+ADS+ADI+ABA0AP
+        '30_1': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AFa+ELX+ALA+AFJ+ABt4BP4AUHwAs=
+        '30_2': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AJN+AFp4Av4AcD4AkjwOfgA1+AB8AL
+        '30_3': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AJa+AFp4Av4AcD4Akj4AVbgFfgBQs=
+        '30_4': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AFN+AJp4Av4AcD4AkjwEuAW+ALCw==
+        '30_5': C9kTUgiaAfoGmgG8AuABA+AHD+ADE0AH4AcL4AMD4BND4AMb4As34AdD4AUDAG/gIE/gBzcD6nPZE+ALG+Ap5wBv4A7n4BGb4AunwC/gAV/gCVfhCw9AJ+EHC+ABH+AXg+Ado4AnQI/Ao+AFa+AJp4Av4AcD4AkjgAeA68Bf4AUL
+      temp_helper: '{{ ''input_number.salon_klima_sicaklik'' if unit == ''salon''
+        else (''input_number.leyla_klima_sicaklik'' if unit == ''leyla'' else ''input_number.oda_klima_sicaklik'')
+        }}'
+      fan_helper: '{{ ''input_select.salon_klima_fan_hizi'' if unit == ''salon'' else
+        (''input_select.leyla_klima_fan_hizi'' if unit == ''leyla'' else ''input_select.oda_klima_fan_hizi'')
+        }}'
+      target_entity: '{{ ''text.salon_klima_ir_code_to_send'' if unit == ''salon''
+        else (''text.leyla_klima_ir_code_to_send'' if unit == ''leyla'' else ''text.oda_klima_ir_code_to_send'')
+        }}'
+      mode_helper: '{{ ''input_select.salon_klima_mod'' if unit == ''salon'' else
+        (''input_select.leyla_klima_mod'' if unit == ''leyla'' else ''input_select.oda_klima_mod'')
+        }}'
+      stamp_helper: '{{ ''input_datetime.salon_klima_son_komut'' if unit == ''salon''
+        else (''input_datetime.leyla_klima_son_komut'' if unit == ''leyla'' else ''input_datetime.oda_klima_son_komut'')
+        }}'
+      key: '{{ (temp|int|string) ~ ''_'' ~ (fan|string) }}'
+  - if:
+    - condition: template
+      value_template: '{{ key not in code_map }}'
+    then:
+    - stop: No IR code for this temp/fan combination
+      error: true
+  - action: input_number.set_value
+    target:
+      entity_id: '{{ temp_helper }}'
+    data:
+      value: '{{ temp|int }}'
+  - action: input_select.select_option
+    target:
+      entity_id: '{{ fan_helper }}'
+    data:
+      option: '{{ fan|string }}'
+  - action: text.set_value
+    target:
+      entity_id: '{{ target_entity }}'
+    data:
+      value: '{{ code_map[key] }}'
+  - action: input_select.select_option
+    target:
+      entity_id: '{{ mode_helper }}'
+    data:
+      option: cool
+  - action: input_datetime.set_datetime
+    target:
+      entity_id: '{{ stamp_helper }}'
+    data:
+      timestamp: '{{ now().timestamp() }}'
+ac_all_off:
+  alias: AC All Off
+  description: Turn off all three Daikin units (Salon, Leyla, Oda).
+  mode: single
+  icon: mdi:power
+  sequence:
+  - action: script.ac_turn_off
+    data:
+      unit: salon
+    continue_on_error: true
+  - action: script.ac_turn_off
+    data:
+      unit: leyla
+    continue_on_error: true
+  - action: script.ac_turn_off
+    data:
+      unit: oda
+    continue_on_error: true
+am07_power_toggle:
+  alias: AM07 Power Toggle
+  description: Sends the next Dyson AM07 power code. The remote rotates through three
+    codes, so this keeps the rotation in step.
+  mode: single
+  icon: mdi:power
+  sequence:
+  - variables:
+      codes:
+        '0': H6EIfgPGApMGxgJkA8YCZAPGAnkGxgJkA8YCZAPGAkkDH8YCmAPGAn4DxgJkA8YCZAPGAmQDxgJkA8YCZAPGAmQDA8YCzrE=
+        '1': H6EIfgPGApMGxgJkA8YCZAPGAnkGxgJkA8YCZAPGAkkDH8YCmAPGAn4DxgJkA8YCZAPGAmQDxgJkA8YCZAPGAnkGA8YCzrE=
+        '2': H6EIfgPGApMGxgJkA8YCZAPGAnkGxgJkA8YCZAPGAkkDH8YCmAPGAn4DxgJkA8YCZAPGAmQDxgJkA8YCeQbGAmQDA8YCzrE=
+      idx: '{{ states(''input_number.am07_kod_index'') | int(0) }}'
+  - action: text.set_value
+    target:
+      entity_id: text.salon_klima_ir_code_to_send
+    data:
+      value: '{{ codes[idx | string] }}'
+  - action: input_number.set_value
+    target:
+      entity_id: input_number.am07_kod_index
+    data:
+      value: '{{ (idx + 1) % 3 }}'
+am07_turn_on:
+  alias: AM07 Turn On
+  description: Turns the AM07 on and confirms it with the binary_sensor.ikinci_priz_am07_calisiyor
+    power measurement; retries once if the IR was missed.
+  mode: single
+  icon: mdi:fan
+  sequence:
+  - if:
+    - condition: state
+      entity_id: binary_sensor.ikinci_priz_am07_calisiyor
+      state: 'off'
+    then:
+    - action: script.am07_power_toggle
+    - wait_for_trigger:
+      - trigger: state
+        entity_id: binary_sensor.ikinci_priz_am07_calisiyor
+        to: 'on'
+      timeout:
+        seconds: 25
+      continue_on_timeout: true
+    - if:
+      - condition: template
+        value_template: '{{ not wait.completed }}'
+      then:
+      - action: script.am07_power_toggle
+        data: {}
+      - wait_for_trigger:
+        - trigger: state
+          entity_id: binary_sensor.ikinci_priz_am07_calisiyor
+          to: 'on'
+        timeout:
+          seconds: 25
+        continue_on_timeout: true
+      - if:
+        - condition: template
+          value_template: '{{ not wait.completed }}'
+        then:
+        - action: persistent_notification.create
+          data:
+            title: AM07 did not respond
+            message: Sent the power code twice but binary_sensor.ikinci_priz_am07_calisiyor
+              never turned on. Check line of sight to the SALON_KLIMA blaster, or
+              that the fan is plugged into ikinci_priz.
+            notification_id: am07_no_response
+am07_turn_off:
+  alias: AM07 Turn Off
+  description: Turns the AM07 off and confirms it with the binary_sensor.ikinci_priz_am07_calisiyor
+    power measurement; retries once if the IR was missed.
+  mode: single
+  icon: mdi:fan-off
+  sequence:
+  - if:
+    - condition: state
+      entity_id: binary_sensor.ikinci_priz_am07_calisiyor
+      state: 'on'
+    then:
+    - action: script.am07_power_toggle
+    - wait_for_trigger:
+      - trigger: state
+        entity_id: binary_sensor.ikinci_priz_am07_calisiyor
+        to: 'off'
+      timeout:
+        seconds: 25
+      continue_on_timeout: true
+    - if:
+      - condition: template
+        value_template: '{{ not wait.completed }}'
+      then:
+      - action: script.am07_power_toggle
+        data: {}
+      - wait_for_trigger:
+        - trigger: state
+          entity_id: binary_sensor.ikinci_priz_am07_calisiyor
+          to: 'off'
+        timeout:
+          seconds: 25
+        continue_on_timeout: true
+      - if:
+        - condition: template
+          value_template: '{{ not wait.completed }}'
+        then:
+        - action: persistent_notification.create
+          data:
+            title: AM07 did not respond
+            message: Sent the power code twice but binary_sensor.ikinci_priz_am07_calisiyor
+              never turned off. Check line of sight to the SALON_KLIMA blaster, or
+              that the fan is plugged into ikinci_priz.
+            notification_id: am07_no_response
+  - action: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.am07_swing_acik
+am07_speed_up:
+  alias: AM07 Speed Up
+  description: One speed step up. Starts from the MEASURED speed (sensor.am07_olculen_hiz,
+    derived from plug wattage) unless a press was made in the last 20 s, in which
+    case it continues optimistically from input_number.am07_hiz. automation.am07_hiz_senkron
+    reconciles afterwards.
+  mode: queued
+  max: 10
+  icon: mdi:plus
+  sequence:
+  - condition: state
+    entity_id: binary_sensor.ikinci_priz_am07_calisiyor
+    state: 'on'
+  - variables:
+      cur: '{% set age = (now() - states.input_number.am07_hiz.last_changed).total_seconds()
+        %}{% set m = states(''sensor.am07_olculen_hiz'') | int(0) %}{% set c = states(''input_number.am07_hiz'')
+        | int(1) %}{{ c if (age < 20 or m < 1) else m }}'
+  - condition: template
+    value_template: '{{ cur | int(1) < 10 }}'
+  - action: text.set_value
+    target:
+      entity_id: text.salon_klima_ir_code_to_send
+    data:
+      value: HwoJfgPGApMGxgJ+A8YCZAPGAnkGxgJkA8YCZAPGAmQDH8YCmAPGApMGxgJ+A8YCkwbGAmQDxgJ5BsYCZAPGAnkGA8YCzrE=
+  - action: input_number.set_value
+    target:
+      entity_id: input_number.am07_hiz
+    data:
+      value: '{{ cur | int(1) + 1 }}'
+  - action: input_datetime.set_datetime
+    target:
+      entity_id: input_datetime.am07_son_komut
+    data:
+      timestamp: '{{ now().timestamp() }}'
+  - delay:
+      milliseconds: 700
+am07_speed_down:
+  alias: AM07 Speed Down
+  description: One speed step down. Starts from the MEASURED speed (sensor.am07_olculen_hiz,
+    derived from plug wattage) unless a press was made in the last 20 s, in which
+    case it continues optimistically from input_number.am07_hiz. automation.am07_hiz_senkron
+    reconciles afterwards.
+  mode: queued
+  max: 10
+  icon: mdi:minus
+  sequence:
+  - condition: state
+    entity_id: binary_sensor.ikinci_priz_am07_calisiyor
+    state: 'on'
+  - variables:
+      cur: '{% set age = (now() - states.input_number.am07_hiz.last_changed).total_seconds()
+        %}{% set m = states(''sensor.am07_olculen_hiz'') | int(0) %}{% set c = states(''input_number.am07_hiz'')
+        | int(1) %}{{ c if (age < 20 or m < 1) else m }}'
+  - condition: template
+    value_template: '{{ cur | int(1) > 1 }}'
+  - action: text.set_value
+    target:
+      entity_id: text.salon_klima_ir_code_to_send
+    data:
+      value: H4cIfgPGApMGxgJ+A8YCZAPGAnkGxgJkA8YCZAPGAmQDH8YCrQbGApMGxgKTBsYCkwbGAnkGxgJ5BsYCZAPGAmQDA8YCzrE=
+  - action: input_number.set_value
+    target:
+      entity_id: input_number.am07_hiz
+    data:
+      value: '{{ cur | int(1) - 1 }}'
+  - action: input_datetime.set_datetime
+    target:
+      entity_id: input_datetime.am07_son_komut
+    data:
+      timestamp: '{{ now().timestamp() }}'
+  - delay:
+      milliseconds: 700
+am07_swing:
+  alias: AM07 Swing
+  description: Toggles AM07 oscillation. No feedback exists, so input_boolean.am07_swing_acik
+    is an assumption that flips on every press.
+  mode: single
+  icon: mdi:arrow-oscillating
+  sequence:
+  - condition: state
+    entity_id: binary_sensor.ikinci_priz_am07_calisiyor
+    state: 'on'
+  - action: text.set_value
+    target:
+      entity_id: text.salon_klima_ir_code_to_send
+    data:
+      value: H6EIfgPgAnkGxgJkA+ACZAPgAnkG4AJkA+ACZAPgAmQDH8YCkwbgAn4DxgJ5BsYCZAPGAnkGxgJkA8YCXgbGAmQDA+ACzrE=
+  - action: input_boolean.toggle
+    target:
+      entity_id: input_boolean.am07_swing_acik
+  - action: input_datetime.set_datetime
+    target:
+      entity_id: input_datetime.am07_son_komut
+    data:
+      timestamp: '{{ now().timestamp() }}'
+isiklari_kapat:
+  alias: Işıkları kapat
+  description: 'Evdeki tüm aydınlatmayı kapatır: 5 Hue ampul, 8 anahtar kanalı ve
+    Kartel priz. Adaptif ışık otomasyonuna dokunmaz.'
+  mode: single
+  icon: mdi:lightbulb-off
+  sequence:
+  - action: light.turn_off
+    target:
+      entity_id:
+      - light.tv_dixon_hue
+      - light.bitki_hasir_hue
+      - light.beyaz_abajur_hue
+      - light.leyla_huespot_sol
+      - light.leyla_huespot_sag
+    data:
+      transition: 2
+  - action: switch.turn_off
+    target:
+      entity_id:
+      - switch.salon_aydinlatma_l1
+      - switch.salon_aydinlatma_l2
+      - switch.tv_aydinlatma_l1
+      - switch.tv_aydinlatma_l2
+      - switch.giris_aydinlatma_dolap_ayna_l1
+      - switch.giris_aydinlatma_dolap_ayna_l2
+      - switch.giris_aydinlatma_sanat_sokak_l1
+      - switch.giris_aydinlatma_sanat_sokak_l2
+      - switch.kartel_priz

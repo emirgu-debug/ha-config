@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "minor_version": 1,
+  "key": "person",
+  "data": {
+    "items": [
+      {
+        "id": "ha",
+        "name": "ha",
+        "user_id": "e5d1fafe06da481eb1437fcc206d6e73",
+        "device_trackers": [
+          "device_tracker.sm_s921b"
+        ],
+        "picture": null
+      },
+      {
+        "id": "emir",
+        "name": "Emir",
+        "device_trackers": [
+          "device_tracker.iphone_emir",
+          "device_tracker.apple_watch",
+          "device_tracker.ipad"
+        ],
+        "user_id": "d3561d30cc7d41fa9ca18b07e86b416a",
+        "picture": null
+      },
+      {
+        "id": "nazli",
+        "name": "Nazlı",
+        "device_trackers": [
+          "device_tracker.nazlis_iphone"
+        ],
+        "user_id": "e640795fefb8482e9e1014204d2c79dd",
+        "picture": null
+      }
+    ]
+  }
+}

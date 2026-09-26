@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_number",
+  "data": {
+    "items": [
+      {
+        "id": "salon_klima_sicaklik",
+        "name": "Salon Klima Sıcaklık",
+        "min": 18.0,
+        "max": 30.0,
+        "step": 2.0,
+        "unit_of_measurement": "°C",
+        "mode": "box"
+      },
+      {
+        "id": "leyla_klima_sicaklik",
+        "name": "Leyla Klima Sıcaklık",
+        "min": 18.0,
+        "max": 30.0,
+        "step": 2.0,
+        "unit_of_measurement": "°C",
+        "mode": "box"
+      },
+      {
+        "id": "oda_klima_sicaklik",
+        "name": "Oda Klima Sıcaklık",
+        "min": 18.0,
+        "max": 30.0,
+        "step": 2.0,
+        "unit_of_measurement": "°C",
+        "mode": "box"
+      },
+      {
+        "id": "am07_kod_index",
+        "name": "AM07 Kod Index",
+        "min": 0.0,
+        "max": 2.0,
+        "step": 1.0,
+        "mode": "box",
+        "icon": "mdi:numeric"
+      },
+      {
+        "id": "am07_hiz",
+        "name": "AM07 Hiz",
+        "min": 1.0,
+        "max": 10.0,
+        "step": 1.0,
+        "mode": "box",
+        "icon": "mdi:speedometer"
+      },
+      {
+        "id": "adaptif_son_kelvin",
+        "name": "Adaptif Son Kelvin",
+        "min": 1500.0,
+        "max": 7000.0,
+        "step": 1.0,
+        "mode": "box",
+        "unit_of_measurement": "K",
+        "icon": "mdi:temperature-kelvin"
+      },
+      {
+        "id": "adaptif_son_parlaklik",
+        "name": "Adaptif Son Parlaklik",
+        "min": 1.0,
+        "max": 100.0,
+        "step": 1.0,
+        "mode": "box",
+        "unit_of_measurement": "%",
+        "icon": "mdi:brightness-percent"
+      }
+    ]
+  }
+}

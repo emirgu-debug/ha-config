@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "zone",
+  "data": {
+    "items": [
+      {
+        "id": "anne_evi",
+        "name": "Nursel'in Evi",
+        "latitude": 41.063497,
+        "longitude": 29.00789,
+        "radius": 90.0,
+        "icon": "mdi:home-heart",
+        "passive": false
+      },
+      {
+        "id": "yayla_evi",
+        "name": "Yayla Evi",
+        "latitude": 40.95912,
+        "longitude": 29.07687,
+        "radius": 90.0,
+        "icon": "mdi:home-heart",
+        "passive": false
+      }
+    ]
+  }
+}

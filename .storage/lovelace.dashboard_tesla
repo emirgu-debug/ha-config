@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_tesla",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "type": "masonry",
+          "path": "",
+          "cards": [
+            {
+              "type": "custom:tesla-card",
+              "car_name": "Tesla",
+              "car_model": "Y",
+              "car_variant": "Y.1",
+              "car_color": "red_multi_coat",
+              "image_path": "/hacsfiles/homeassistant-fe-tesla",
+              "integration": "entities",
+              "name": "Tesla",
+              "entity_overrides": {
+                "BATTERY_LEVEL": "sensor.gultekins_battery_level",
+                "BATTERY_RANGE": "sensor.gultekins_ideal_battery_range",
+                "CHARGING_STATE": "sensor.gultekins_charging",
+                "CHARGE_RATE": "sensor.gultekins_charger_current",
+                "TEMPERATURE_INSIDE": "sensor.gultekins_inside_temperature",
+                "TEMPERATURE_OUTSIDE": "sensor.gultekins_outside_temperature",
+                "ONLINE": "binary_sensor.gultekins_cellular",
+                "PLUGGED_IN": "binary_sensor.gultekins_charge_cable",
+                "DOOR_DRIVER_FRONT": "binary_sensor.gultekins_front_driver_door",
+                "DOOR_DRIVER_REAR": "binary_sensor.gultekins_rear_driver_door",
+                "DOOR_PASSENGER_FRONT": "binary_sensor.gultekins_front_passenger_door",
+                "DOOR_PASSENGER_REAR": "binary_sensor.gultekins_rear_passenger_door",
+                "WINDOW_DRIVER_FRONT": "binary_sensor.gultekins_front_driver_window",
+                "WINDOW_DRIVER_REAR": "binary_sensor.gultekins_rear_driver_window",
+                "WINDOW_PASSENGER_FRONT": "binary_sensor.gultekins_front_passenger_window",
+                "WINDOW_PASSENGER_REAR": "binary_sensor.gultekins_rear_passenger_window",
+                "DOOR_LOCK": "lock.gultekins_lock",
+                "TYRE_FL": "sensor.gultekins_tire_pressure_front_left",
+                "TYRE_FR": "sensor.gultekins_tire_pressure_front_right",
+                "TYRE_RL": "sensor.gultekins_tire_pressure_rear_left",
+                "TYRE_RR": "sensor.gultekins_tire_pressure_rear_right",
+                "OPEN_FRUNK": "cover.gultekins_frunk",
+                "OPEN_TRUNK": "cover.gultekins_trunk",
+                "HORN": "button.gultekins_honk_horn",
+                "FLASH_LIGHTS": "button.gultekins_flash_lights"
+              }
+            }
+          ],
+          "title": "Tesla",
+          "icon": "mdi:car"
+        },
+        {
+          "type": "sections",
+          "max_columns": 4,
+          "title": "T2",
+          "path": "t2",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:tesla-fleet-card",
+                  "cars": [
+                    {
+                      "name": "gultekins",
+                      "model": "Model Y",
+                      "paint": "white",
+                      "prefix": "gultekins"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

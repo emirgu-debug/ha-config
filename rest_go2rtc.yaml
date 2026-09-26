@@ -1,0 +1,25 @@
+# go2rtc (a889bffc_go2rtc app) durum sensorleri
+# Kaynak: http://localhost:1984/api/streams\?src\=tapo_c225
+# Bu endpoint sadece mevcut go2rtc durumunu okur; yeni RTSP baglantisi ACMAZ (guvenli/pasif poll).
+- resource: "http://localhost:1984/api/streams?src=tapo_c225"
+  scan_interval: 30
+  sensor:
+    - name: "Leyla Kamera go2rtc Durumu"
+      unique_id: go2rtc_tapo_c225_durum
+      value_template: >-
+        {% if value_json.consumers | length > 0 %}Izleniyor{% else %}Bosta{% endif %}
+      icon: >-
+        {% if value_json.consumers | length > 0 %}mdi:cctv{% else %}mdi:cctv-off{% endif %}
+    - name: "Leyla Kamera go2rtc Izleyici Sayisi"
+      unique_id: go2rtc_tapo_c225_izleyici_sayisi
+      value_template: "{{ value_json.consumers | length }}"
+      state_class: measurement
+    - name: "Leyla Kamera go2rtc Aktif Kalite"
+      unique_id: go2rtc_tapo_c225_aktif_kalite
+      value_template: >-
+        {% set aktif = value_json.producers | selectattr('medias', 'defined') | list %}
+        {% if aktif | length > 0 %}
+          {% if 'stream1' in aktif[0].url %}HD{% elif 'stream2' in aktif[0].url %}SD{% else %}Bilinmiyor{% endif %}
+        {% else %}
+          -
+        {% endif %}

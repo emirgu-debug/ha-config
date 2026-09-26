@@ -1,0 +1,3906 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_kobay2",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Floor Plan",
+          "type": "sections",
+          "panel": true,
+          "cards": [],
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "separator",
+                  "name": "Home Status",
+                  "icon": "mdi:home-alert-outline",
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "state",
+                  "entity": "binary_sensor.zigbee2mqtt_bridge_connection_state",
+                  "name": "Zigbee",
+                  "icon": "mdi:zigbee",
+                  "show_state": true,
+                  "show_last_changed": false,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "more-info"
+                    },
+                    "double_tap_action": {
+                      "action": "more-info"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 8,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "state",
+                  "entity": "binary_sensor.dsl_ax82u_d100_wan_status",
+                  "name": "WAN",
+                  "icon": "mdi:wan",
+                  "show_state": true,
+                  "show_last_changed": false,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "more-info"
+                    },
+                    "double_tap_action": {
+                      "action": "more-info"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 8,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "state",
+                  "entity": "sensor.pil_dusuk_sayisi",
+                  "name": "Low Battery",
+                  "icon": "mdi:battery-alert-variant-outline",
+                  "show_state": true,
+                  "show_last_changed": false,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "more-info"
+                    },
+                    "double_tap_action": {
+                      "action": "more-info"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 8,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false
+                },
+                {
+                  "type": "picture-elements",
+                  "image": "/local/floor5.png",
+                  "elements": [
+                    {
+                      "type": "custom:button-card",
+                      "show_icon": false,
+                      "show_name": false,
+                      "show_state": false,
+                      "tap_action": {
+                        "action": "none"
+                      },
+                      "hold_action": {
+                        "action": "none"
+                      },
+                      "triggers_update": [
+                        "switch.giris_aydinlatma_dolap_ayna_l1",
+                        "switch.giris_aydinlatma_dolap_ayna_l2",
+                        "switch.giris_aydinlatma_sanat_sokak_l1",
+                        "switch.giris_aydinlatma_sanat_sokak_l2",
+                        "switch.tv_aydinlatma_l1",
+                        "switch.tv_aydinlatma_l2",
+                        "switch.salon_aydinlatma_l1",
+                        "switch.salon_aydinlatma_l2",
+                        "light.leyla_huespot_sol",
+                        "light.leyla_huespot_sag",
+                        "light.tv_dixon_hue",
+                        "light.bitki_hasir_hue",
+                        "light.beyaz_aplik_hue",
+                        "light.kartel_salon",
+                        "light.tv_yer",
+                        "light.salon_calisma_masasi",
+                        "light.oda_kartel",
+                        "switch.koridor_aydinlatma",
+                        "switch.camasir_aydinlatma",
+                        "switch.is_odasi_aydinlatma",
+                        "switch.is_odasi_giris_aydinlatma",
+                        "switch.mutfak_aydinlatma_l1",
+                        "switch.mutfak_aydinlatma_l2"
+                      ],
+                      "style": {
+                        "position": "absolute",
+                        "top": "0",
+                        "left": "0",
+                        "width": "100%",
+                        "min-width": "100%",
+                        "height": "100%",
+                        "transform": "none",
+                        "pointer-events": "none",
+                        "z-index": "0"
+                      },
+                      "styles": {
+                        "card": [
+                          {
+                            "position": "absolute"
+                          },
+                          {
+                            "top": "0"
+                          },
+                          {
+                            "left": "0"
+                          },
+                          {
+                            "right": "0"
+                          },
+                          {
+                            "bottom": "0"
+                          },
+                          {
+                            "background": "none"
+                          },
+                          {
+                            "border": "none"
+                          },
+                          {
+                            "box-shadow": "none"
+                          },
+                          {
+                            "padding": "0"
+                          },
+                          {
+                            "margin": "0"
+                          },
+                          {
+                            "width": "100%"
+                          },
+                          {
+                            "height": "100%"
+                          },
+                          {
+                            "overflow": "hidden"
+                          },
+                          {
+                            "border-radius": "0"
+                          }
+                        ],
+                        "grid": [
+                          {
+                            "grid-template-areas": "\"c\""
+                          },
+                          {
+                            "grid-template-columns": "1fr"
+                          },
+                          {
+                            "height": "100%"
+                          }
+                        ],
+                        "custom_fields": {
+                          "c": [
+                            {
+                              "position": "absolute"
+                            },
+                            {
+                              "inset": "0"
+                            },
+                            {
+                              "width": "100%"
+                            },
+                            {
+                              "height": "100%"
+                            }
+                          ]
+                        }
+                      },
+                      "custom_fields": {
+                        "c": "[[[\n  // --- colour helpers ---------------------------------------------------\n  const k2rgb = (k) => { const t = k / 100; let r, g, b;\n    if (t <= 66) { r = 255; g = 99.47 * Math.log(t) - 161.12; }\n    else { r = 329.7 * Math.pow(t - 60, -0.1332); g = 288.12 * Math.pow(t - 60, -0.0755); }\n    if (t >= 66) b = 255; else if (t <= 19) b = 0; else b = 138.52 * Math.log(t - 10) - 305.04;\n    const q = (v) => Math.max(0, Math.min(255, Math.round(v)));\n    return [q(r), q(g), q(b)]; };\n\n  const TUNGSTEN = [255, 176, 92];        // plain on/off relays — warm bulb\n  const LIGHTS = [[\"switch.giris_aydinlatma_dolap_ayna_l1\",52,47,17,\"ceil\"],[\"switch.giris_aydinlatma_dolap_ayna_l2\",65,52,17,\"ceil\"],[\"switch.giris_aydinlatma_sanat_sokak_l1\",55,56,17,\"ceil\"],[\"switch.giris_aydinlatma_sanat_sokak_l2\",54,58,17,\"ceil\"],[\"switch.tv_aydinlatma_l1\",50,74,19,\"ceil\"],[\"switch.tv_aydinlatma_l2\",50,87,19,\"ceil\"],[\"switch.salon_aydinlatma_l1\",62,65,22,\"ceil\"],[\"switch.salon_aydinlatma_l2\",75,90,22,\"ceil\"],[\"light.leyla_huespot_sol\",37,79,11,\"spot\"],[\"light.leyla_huespot_sag\",37,82,11,\"spot\"],[\"light.tv_dixon_hue\",44,91,14,\"lamp\"],[\"light.bitki_hasir_hue\",90,92,14,\"lamp\"],[\"light.beyaz_aplik_hue\",98,83,15,\"lamp\"],[\"light.kartel_salon\",95,49,13,\"lamp\"],[\"light.tv_yer\",56,91,14,\"lamp\"],[\"light.salon_calisma_masasi\",69,91,11,\"lamp\"],[\"light.oda_kartel\",4,74,13,\"lamp\"],[\"switch.koridor_aydinlatma\",40,61,15,\"ceil\"],[\"switch.camasir_aydinlatma\",52,66,13,\"ceil\"],[\"switch.is_odasi_aydinlatma\",16,46,17,\"ceil\"],[\"switch.is_odasi_giris_aydinlatma\",39,47,13,\"ceil\"],[\"switch.mutfak_aydinlatma_l1\",77,41,12,\"lamp\"],[\"switch.mutfak_aydinlatma_l2\",77,33,13,\"ceil\"]];\n\n  let lit = 0, total = 0, blobs = '';\n\n  for (const [id, left, top, rad, kind] of LIGHTS) {\n    const s = states[id];\n    total++;\n    if (!s || s.state !== 'on') continue;     // off or unavailable -> no glow\n    lit++;\n\n    // brightness 0..1 (relays have none, so treat as full)\n    const br = s.attributes.brightness != null ? s.attributes.brightness / 255 : 1;\n\n    // colour: real rgb if the bulb is in a colour mode, else its kelvin, else tungsten\n    let rgb = TUNGSTEN;\n    if (s.attributes.rgb_color) rgb = s.attributes.rgb_color;\n    else if (s.attributes.color_temp_kelvin) rgb = k2rgb(s.attributes.color_temp_kelvin);\n\n    // dim bulbs make a smaller, softer pool of light (narrowed vs. the original build)\n    const size = rad * (0.46 + 0.40 * br);\n    const core = (0.30 + 0.55 * br).toFixed(2);\n    const mid  = (0.12 + 0.28 * br).toFixed(2);\n    const c = rgb.join(',');\n\n    blobs += '<i class=\"gl\" style=\"left:' + left + '%;top:' + top + '%;'\n      + 'width:' + (size * 2).toFixed(1) + '%;height:' + (size * 2).toFixed(1) + '%;'\n      + 'background:radial-gradient(circle,rgba(' + c + ',' + core + ') 0%,'\n      + 'rgba(' + c + ',' + mid + ') 38%,rgba(' + c + ',0) 72%)\"></i>';\n\n    // a tight, brighter reflection core — the direct glint of the bulb, not just its wash\n    const rsize = rad * (0.16 + 0.10 * br);\n    const rcore = (0.55 + 0.35 * br).toFixed(2);\n    blobs += '<i class=\"rf\" style=\"left:' + left + '%;top:' + top + '%;'\n      + 'width:' + (rsize * 2).toFixed(1) + '%;height:' + (rsize * 2).toFixed(1) + '%;'\n      + 'background:radial-gradient(circle,rgba(' + c + ',' + rcore + ') 0%,rgba(' + c + ',0) 70%)\"></i>';\n  }\n\n  // the room goes dark when nothing is on, and lifts as lights come up\n  const veil = (0.62 * (1 - lit / Math.max(1, total)) ** 0.7).toFixed(3);\n  return '<div class=\"veil\" style=\"opacity:' + veil + '\"></div>' + blobs;\n]]]"
+                      },
+                      "extra_styles": "#card { pointer-events: none !important; }\n.veil { position: absolute; inset: 0; background: #050a16;\n  transition: opacity 1.2s ease; pointer-events: none; }\n.gl { position: absolute; border-radius: 50%; transform: translate(-50%, -50%);\n  mix-blend-mode: screen; pointer-events: none; display: block;\n  transition: width .9s ease, height .9s ease, background .9s ease, opacity .9s ease;\n  animation: glFlicker 6s ease-in-out infinite; }\n.rf { position: absolute; border-radius: 50%; transform: translate(-50%, -50%);\n  mix-blend-mode: screen; pointer-events: none; display: block;\n  transition: width .9s ease, height .9s ease, background .9s ease, opacity .9s ease;\n  animation: glFlicker 6s ease-in-out infinite; }\n@keyframes glFlicker { 0%,100% { opacity: 1; } 50% { opacity: .93; } }\n@media (prefers-reduced-motion: reduce) { .gl, .rf { animation: none; } }"
+                    },
+                    {
+                      "type": "state-label",
+                      "entity": "sensor.oda_sicaklik_nem_ekransiz_temperature",
+                      "style": {
+                        "top": "78%",
+                        "left": "11%",
+                        "color": "white",
+                        "--mdc-icon-size": "35px",
+                        "cursor": "pointer",
+                        "background": "rgba(13,18,27,.55)",
+                        "padding": "2px 7px",
+                        "border-radius": "8px",
+                        "backdrop-filter": "blur(2px)"
+                      },
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "#oda"
+                      },
+                      "hold_action": {
+                        "action": "more-info"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "switch.giris_aydinlatma_dolap_ayna_l2",
+                      "icon": "mdi:lightbulb",
+                      "style": {
+                        "top": "52%",
+                        "left": "65%",
+                        "--mdc-icon-size": "25px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "switch.giris_aydinlatma_dolap_ayna_l1",
+                      "icon": "mdi:lightbulb",
+                      "style": {
+                        "top": "47%",
+                        "left": "52%",
+                        "--mdc-icon-size": "25px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "switch.giris_aydinlatma_sanat_sokak_l2",
+                      "icon": "mdi:lightbulb",
+                      "style": {
+                        "top": "58%",
+                        "left": "54%",
+                        "--mdc-icon-size": "25px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "switch.tv_aydinlatma_l1",
+                      "icon": "mdi:lightbulb",
+                      "style": {
+                        "top": "74%",
+                        "left": "50%",
+                        "--mdc-icon-size": "25px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "switch.tv_aydinlatma_l2",
+                      "icon": "mdi:lightbulb",
+                      "style": {
+                        "top": "87%",
+                        "left": "50%",
+                        "--mdc-icon-size": "25px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "switch.salon_aydinlatma_l1",
+                      "icon": "mdi:lightbulb",
+                      "style": {
+                        "top": "65%",
+                        "left": "62%",
+                        "--mdc-icon-size": "35px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "switch.salon_aydinlatma_l2",
+                      "icon": "mdi:lightbulb",
+                      "style": {
+                        "top": "90%",
+                        "left": "75%",
+                        "--mdc-icon-size": "35px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "cover.panjorno_1",
+                      "icon": "mdi:window-shutter",
+                      "style": {
+                        "top": "95%",
+                        "left": "69%",
+                        "--mdc-icon-size": "35px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "cover.panjur_2_sol",
+                      "icon": "mdi:window-shutter",
+                      "style": {
+                        "top": "95%",
+                        "left": "80%",
+                        "--mdc-icon-size": "35px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "cover.panjur_tv",
+                      "icon": "mdi:window-shutter",
+                      "style": {
+                        "top": "95%",
+                        "left": "50%",
+                        "--mdc-icon-size": "35px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "light.leyla_huespot_sol",
+                      "icon": "mdi:lightbulb-spot",
+                      "style": {
+                        "top": "79%",
+                        "left": "37%",
+                        "--mdc-icon-size": "18px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "light.leyla_huespot_sag",
+                      "icon": "mdi:lightbulb-spot",
+                      "style": {
+                        "top": "82%",
+                        "left": "37%",
+                        "--mdc-icon-size": "18px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "light.tv_dixon_hue",
+                      "icon": "mdi:floor-lamp-torchiere",
+                      "style": {
+                        "top": "91%",
+                        "left": "44%",
+                        "--mdc-icon-size": "25px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "light.bitki_hasir_hue",
+                      "icon": "mdi:floor-lamp-torchiere",
+                      "style": {
+                        "top": "92%",
+                        "left": "90%",
+                        "--mdc-icon-size": "25px"
+                      }
+                    },
+                    {
+                      "type": "custom:webrtc-camera",
+                      "url": "tapo_c225",
+                      "style": {
+                        "top": "88%",
+                        "left": "25%",
+                        "width": "120px",
+                        "transform": "translate(-40%, -40%)",
+                        "border-radius": "8px",
+                        "overflow": "hidden",
+                        "z-index": 2
+                      },
+                      "card_mod": {
+                        "style": {
+                          "$": "div {\n  --webrtc-badge-display: none;\n}\n.badge, .info {\n  display: none !important;\n}\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "style": {
+                        "left": "56%",
+                        "top": "91%"
+                      },
+                      "entity": "light.tv_yer",
+                      "icon": "mdi:lightbulb"
+                    },
+                    {
+                      "type": "state-icon",
+                      "style": {
+                        "left": "95%",
+                        "top": "49%"
+                      },
+                      "entity": "light.kartel_salon",
+                      "icon": "mdi:lamp"
+                    },
+                    {
+                      "type": "state-icon",
+                      "style": {
+                        "left": "4%",
+                        "top": "74%"
+                      },
+                      "entity": "light.oda_kartel",
+                      "icon": "mdi:lamp"
+                    },
+                    {
+                      "type": "state-icon",
+                      "style": {
+                        "left": "69%",
+                        "top": "91%"
+                      },
+                      "entity": "light.salon_calisma_masasi",
+                      "icon": "mdi:desk-lamp"
+                    },
+                    {
+                      "type": "state-label",
+                      "style": {
+                        "left": "76%",
+                        "top": "74%",
+                        "cursor": "pointer",
+                        "background": "rgba(13,18,27,.55)",
+                        "padding": "2px 7px",
+                        "border-radius": "8px",
+                        "backdrop-filter": "blur(2px)"
+                      },
+                      "entity": "sensor.salon_termo_temperature",
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "#salon"
+                      },
+                      "hold_action": {
+                        "action": "more-info"
+                      }
+                    },
+                    {
+                      "type": "state-label",
+                      "style": {
+                        "left": "87%",
+                        "top": "39%"
+                      },
+                      "entity": "sensor.mutfak_termo_temperature"
+                    },
+                    {
+                      "type": "state-icon",
+                      "style": {
+                        "left": "98%",
+                        "top": "83%"
+                      },
+                      "entity": "light.beyaz_aplik_hue",
+                      "icon": "mdi:lamp"
+                    },
+                    {
+                      "type": "state-label",
+                      "style": {
+                        "left": "31%",
+                        "top": "79%",
+                        "cursor": "pointer",
+                        "background": "rgba(13,18,27,.55)",
+                        "padding": "2px 7px",
+                        "border-radius": "8px",
+                        "backdrop-filter": "blur(2px)"
+                      },
+                      "entity": "sensor.dyson_x6p_eu_thb1395a_temperature",
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "#leyla"
+                      },
+                      "hold_action": {
+                        "action": "more-info"
+                      }
+                    },
+                    {
+                      "type": "state-label",
+                      "style": {
+                        "left": "89%",
+                        "top": "89%"
+                      },
+                      "entity": "sensor.toprak_sensor_01_soil_moisture"
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "cover.yatak_odasi_panjur",
+                      "icon": "mdi:window-shutter",
+                      "style": {
+                        "top": "97%",
+                        "left": "16%",
+                        "--mdc-icon-size": "35px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "switch.camasir_aydinlatma",
+                      "icon": "mdi:lightbulb",
+                      "style": {
+                        "top": "66%",
+                        "left": "52%",
+                        "--mdc-icon-size": "25px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "switch.is_odasi_aydinlatma",
+                      "icon": "mdi:lightbulb",
+                      "style": {
+                        "top": "46%",
+                        "left": "16%",
+                        "--mdc-icon-size": "25px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "switch.is_odasi_giris_aydinlatma",
+                      "icon": "mdi:lightbulb",
+                      "style": {
+                        "top": "47%",
+                        "left": "39%",
+                        "--mdc-icon-size": "25px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "switch.koridor_aydinlatma",
+                      "icon": "mdi:lightbulb",
+                      "style": {
+                        "top": "61%",
+                        "left": "40%",
+                        "--mdc-icon-size": "25px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "switch.mutfak_aydinlatma_l1",
+                      "icon": "mdi:lightbulb",
+                      "style": {
+                        "top": "41%",
+                        "left": "77%",
+                        "--mdc-icon-size": "25px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "switch.mutfak_aydinlatma_l2",
+                      "icon": "mdi:lightbulb",
+                      "style": {
+                        "top": "33%",
+                        "left": "77%",
+                        "--mdc-icon-size": "25px"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "cover.leyla_panjur",
+                      "icon": "mdi:window-shutter",
+                      "style": {
+                        "top": "98%",
+                        "left": "32%",
+                        "--mdc-icon-size": "35px"
+                      }
+                    },
+                    {
+                      "type": "custom:webrtc-camera",
+                      "url": "tapo_kapi",
+                      "style": {
+                        "top": "33%",
+                        "left": "54%",
+                        "width": "120px",
+                        "transform": "translate(-40%, -40%)",
+                        "border-radius": "8px",
+                        "overflow": "hidden",
+                        "z-index": 2
+                      },
+                      "card_mod": {
+                        "style": {
+                          "$": "div {\n  --webrtc-badge-display: none;\n}\n.badge, .info {\n  display: none !important;\n}\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "style": {
+                        "left": "25%",
+                        "top": "49%"
+                      },
+                      "entity": "switch.kedi_mama_otomat_priz",
+                      "icon": "mdi:power-plug"
+                    }
+                  ],
+                  "grid_options": {
+                    "rows": "auto",
+                    "columns": "full"
+                  },
+                  "card_mod": {
+                    "style": "ha-card {\n  max-width: 560px;\n  margin-left: auto;\n  margin-right: auto;\n  overflow: hidden !important;\n  border-radius: 18px !important;\n  box-shadow: 0 14px 38px -18px rgba(0,0,0,.75) !important;\n  --state-cover-active-color: #e7b75f;\n}\n/* the PNG carries 389 blank px of a 966-wide image = 40.27% of the WIDTH.\n   shifting #root (image + every element together) keeps all coordinates aligned. */\n#root { margin-top: -40.27% !important; }\n"
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "separator",
+                  "name": "Scenes",
+                  "icon": "mdi:palette-outline",
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "name",
+                  "name": "Evening",
+                  "icon": "mdi:lamps",
+                  "show_icon": true,
+                  "show_name": true,
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "scene.turn_on",
+                    "target": {
+                      "entity_id": "scene.aksam"
+                    },
+                    "data": {
+                      "transition": 2
+                    }
+                  },
+                  "button_action": {
+                    "tap_action": {
+                      "action": "perform-action",
+                      "perform_action": "scene.turn_on",
+                      "target": {
+                        "entity_id": "scene.aksam"
+                      },
+                      "data": {
+                        "transition": 2
+                      }
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false,
+                  "sub_button": [
+                    {
+                      "icon": "mdi:pencil",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "/config/scene/edit/sahne_aksam"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "name",
+                  "name": "Film",
+                  "icon": "mdi:movie-open",
+                  "show_icon": true,
+                  "show_name": true,
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "scene.turn_on",
+                    "target": {
+                      "entity_id": "scene.film"
+                    },
+                    "data": {
+                      "transition": 2
+                    }
+                  },
+                  "button_action": {
+                    "tap_action": {
+                      "action": "perform-action",
+                      "perform_action": "scene.turn_on",
+                      "target": {
+                        "entity_id": "scene.film"
+                      },
+                      "data": {
+                        "transition": 2
+                      }
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false,
+                  "sub_button": [
+                    {
+                      "icon": "mdi:pencil",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "/config/scene/edit/sahne_film"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "name",
+                  "name": "Night",
+                  "icon": "mdi:weather-night",
+                  "show_icon": true,
+                  "show_name": true,
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "scene.turn_on",
+                    "target": {
+                      "entity_id": "scene.gece"
+                    },
+                    "data": {
+                      "transition": 2
+                    }
+                  },
+                  "button_action": {
+                    "tap_action": {
+                      "action": "perform-action",
+                      "perform_action": "scene.turn_on",
+                      "target": {
+                        "entity_id": "scene.gece"
+                      },
+                      "data": {
+                        "transition": 2
+                      }
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false,
+                  "sub_button": [
+                    {
+                      "icon": "mdi:pencil",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "/config/scene/edit/sahne_gece"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "name",
+                  "name": "Guests",
+                  "icon": "mdi:account-group",
+                  "show_icon": true,
+                  "show_name": true,
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "scene.turn_on",
+                    "target": {
+                      "entity_id": "scene.misafir"
+                    },
+                    "data": {
+                      "transition": 2
+                    }
+                  },
+                  "button_action": {
+                    "tap_action": {
+                      "action": "perform-action",
+                      "perform_action": "scene.turn_on",
+                      "target": {
+                        "entity_id": "scene.misafir"
+                      },
+                      "data": {
+                        "transition": 2
+                      }
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false,
+                  "sub_button": [
+                    {
+                      "icon": "mdi:pencil",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "/config/scene/edit/sahne_misafir"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "name",
+                  "name": "Dinner",
+                  "icon": "mdi:silverware-fork-knife",
+                  "show_icon": true,
+                  "show_name": true,
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "scene.turn_on",
+                    "target": {
+                      "entity_id": "scene.yemek"
+                    },
+                    "data": {
+                      "transition": 2
+                    }
+                  },
+                  "button_action": {
+                    "tap_action": {
+                      "action": "perform-action",
+                      "perform_action": "scene.turn_on",
+                      "target": {
+                        "entity_id": "scene.yemek"
+                      },
+                      "data": {
+                        "transition": 2
+                      }
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false,
+                  "sub_button": [
+                    {
+                      "icon": "mdi:pencil",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "/config/scene/edit/sahne_yemek"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "name",
+                  "name": "Morning",
+                  "icon": "mdi:coffee",
+                  "show_icon": true,
+                  "show_name": true,
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "scene.turn_on",
+                    "target": {
+                      "entity_id": "scene.sabah"
+                    },
+                    "data": {
+                      "transition": 2
+                    }
+                  },
+                  "button_action": {
+                    "tap_action": {
+                      "action": "perform-action",
+                      "perform_action": "scene.turn_on",
+                      "target": {
+                        "entity_id": "scene.sabah"
+                      },
+                      "data": {
+                        "transition": 2
+                      }
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false,
+                  "sub_button": [
+                    {
+                      "icon": "mdi:pencil",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "/config/scene/edit/sahne_sabah"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "separator",
+                  "name": "Lighting",
+                  "icon": "mdi:lightbulb-group",
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "separator",
+                  "name": "Rooms",
+                  "icon": "mdi:floor-plan",
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "name",
+                  "name": "Living Room",
+                  "icon": "mdi:sofa",
+                  "show_icon": true,
+                  "show_name": true,
+                  "tap_action": {
+                    "action": "navigate",
+                    "navigation_path": "#salon"
+                  },
+                  "button_action": {
+                    "tap_action": {
+                      "action": "navigate",
+                      "navigation_path": "#salon"
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "none"
+                    }
+                  },
+                  "sub_button": [
+                    {
+                      "entity": "sensor.salon_acik_isik",
+                      "show_state": true,
+                      "show_name": false,
+                      "show_icon": false,
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "#salon"
+                      }
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "name",
+                  "name": "Entrance",
+                  "icon": "mdi:door-open",
+                  "show_icon": true,
+                  "show_name": true,
+                  "tap_action": {
+                    "action": "navigate",
+                    "navigation_path": "#giris"
+                  },
+                  "button_action": {
+                    "tap_action": {
+                      "action": "navigate",
+                      "navigation_path": "#giris"
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "none"
+                    }
+                  },
+                  "sub_button": [
+                    {
+                      "entity": "sensor.giris_acik_isik",
+                      "show_state": true,
+                      "show_name": false,
+                      "show_icon": false,
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "#giris"
+                      }
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "name",
+                  "name": "Leyla",
+                  "icon": "mdi:bed",
+                  "show_icon": true,
+                  "show_name": true,
+                  "tap_action": {
+                    "action": "navigate",
+                    "navigation_path": "#leyla"
+                  },
+                  "button_action": {
+                    "tap_action": {
+                      "action": "navigate",
+                      "navigation_path": "#leyla"
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "none"
+                    }
+                  },
+                  "sub_button": [
+                    {
+                      "entity": "sensor.leyla_acik_isik",
+                      "show_state": true,
+                      "show_name": false,
+                      "show_icon": false,
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "#leyla"
+                      }
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "name",
+                  "name": "Bedroom",
+                  "icon": "mdi:bed-king-outline",
+                  "show_icon": true,
+                  "show_name": true,
+                  "tap_action": {
+                    "action": "navigate",
+                    "navigation_path": "#oda"
+                  },
+                  "button_action": {
+                    "tap_action": {
+                      "action": "navigate",
+                      "navigation_path": "#oda"
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "none"
+                    }
+                  },
+                  "sub_button": [
+                    {
+                      "entity": "light.oda_kartel",
+                      "show_state": true,
+                      "show_name": false,
+                      "show_icon": false,
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "#oda"
+                      }
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "name",
+                  "name": "Home Office",
+                  "icon": "mdi:desk",
+                  "show_icon": true,
+                  "show_name": true,
+                  "tap_action": {
+                    "action": "navigate",
+                    "navigation_path": "#isodasi"
+                  },
+                  "button_action": {
+                    "tap_action": {
+                      "action": "navigate",
+                      "navigation_path": "#isodasi"
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "none"
+                    }
+                  },
+                  "sub_button": [
+                    {
+                      "entity": "switch.is_odasi_aydinlatma",
+                      "show_state": true,
+                      "show_name": false,
+                      "show_icon": false,
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "#isodasi"
+                      }
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "name",
+                  "name": "Laundry Room",
+                  "icon": "mdi:washing-machine",
+                  "show_icon": true,
+                  "show_name": true,
+                  "tap_action": {
+                    "action": "navigate",
+                    "navigation_path": "#camasir"
+                  },
+                  "button_action": {
+                    "tap_action": {
+                      "action": "navigate",
+                      "navigation_path": "#camasir"
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "none"
+                    }
+                  },
+                  "sub_button": [
+                    {
+                      "entity": "switch.camasir_aydinlatma",
+                      "show_state": true,
+                      "show_name": false,
+                      "show_icon": false,
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "#camasir"
+                      }
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "name",
+                  "name": "Kitchen",
+                  "icon": "mdi:fridge-outline",
+                  "show_icon": true,
+                  "show_name": true,
+                  "tap_action": {
+                    "action": "navigate",
+                    "navigation_path": "#mutfak"
+                  },
+                  "button_action": {
+                    "tap_action": {
+                      "action": "navigate",
+                      "navigation_path": "#mutfak"
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "none"
+                    }
+                  },
+                  "sub_button": [
+                    {
+                      "entity": "switch.mutfak_aydinlatma_l2",
+                      "show_state": true,
+                      "show_name": false,
+                      "show_icon": false,
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "#mutfak"
+                      }
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "switch",
+                  "entity": "switch.koridor_aydinlatma",
+                  "name": "Corridor",
+                  "icon": "mdi:ceiling-light",
+                  "show_state": true,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "toggle"
+                    },
+                    "double_tap_action": {
+                      "action": "more-info"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "separator",
+                  "name": "Lights",
+                  "icon": "mdi:lightbulb-multiple-outline",
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "slider",
+                  "entity": "light.tv_dixon_hue",
+                  "name": "TV Dixon",
+                  "icon": "mdi:floor-lamp",
+                  "show_state": true,
+                  "slider_live_update": false,
+                  "light_transition": true,
+                  "tap_to_slide": false,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "toggle"
+                    },
+                    "double_tap_action": {
+                      "action": "more-info"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "slider",
+                  "entity": "light.beyaz_aplik_hue",
+                  "name": "White Wall Light",
+                  "icon": "mdi:lamp",
+                  "show_state": true,
+                  "slider_live_update": false,
+                  "light_transition": true,
+                  "tap_to_slide": false,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "toggle"
+                    },
+                    "double_tap_action": {
+                      "action": "more-info"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "slider",
+                  "entity": "light.bitki_hasir_hue",
+                  "name": "Plant Pot Light",
+                  "icon": "mdi:flower-tulip",
+                  "show_state": true,
+                  "slider_live_update": false,
+                  "light_transition": true,
+                  "tap_to_slide": false,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "toggle"
+                    },
+                    "double_tap_action": {
+                      "action": "more-info"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "slider",
+                  "entity": "light.kartel_salon",
+                  "name": "Kartel Lamp",
+                  "icon": "mdi:lamp",
+                  "show_state": true,
+                  "slider_live_update": false,
+                  "light_transition": true,
+                  "tap_to_slide": false,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "toggle"
+                    },
+                    "double_tap_action": {
+                      "action": "more-info"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "slider",
+                  "entity": "light.salon_calisma_masasi",
+                  "name": "Desk Lamp",
+                  "icon": "mdi:desk-lamp",
+                  "show_state": true,
+                  "slider_live_update": false,
+                  "light_transition": true,
+                  "tap_to_slide": false,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "toggle"
+                    },
+                    "double_tap_action": {
+                      "action": "more-info"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "slider",
+                  "entity": "light.tv_yer",
+                  "name": "TV Floor Lamp",
+                  "icon": "mdi:floor-lamp",
+                  "show_state": true,
+                  "slider_live_update": false,
+                  "light_transition": true,
+                  "tap_to_slide": false,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "toggle"
+                    },
+                    "double_tap_action": {
+                      "action": "more-info"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "switch",
+                  "entity": "input_boolean.adaptif_isik",
+                  "name": "Adaptive Lighting",
+                  "icon": "mdi:theme-light-dark",
+                  "show_state": true,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "toggle"
+                    },
+                    "double_tap_action": {
+                      "action": "more-info"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 12,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "name",
+                  "name": "Turn Off All Lights",
+                  "icon": "mdi:lightbulb-off",
+                  "show_icon": true,
+                  "show_name": true,
+                  "tap_action": {
+                    "action": "perform-action",
+                    "perform_action": "script.isiklari_kapat"
+                  },
+                  "button_action": {
+                    "tap_action": {
+                      "action": "perform-action",
+                      "perform_action": "script.isiklari_kapat"
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "none"
+                    }
+                  },
+                  "sub_button": [
+                    {
+                      "entity": "sensor.evde_acik_isik",
+                      "show_state": true,
+                      "show_name": false,
+                      "show_icon": false,
+                      "show_background": true
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 24,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "separator",
+                  "name": "Shutters",
+                  "icon": "mdi:window-shutter",
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "slider",
+                  "entity": "cover.panjur_tv",
+                  "name": "TV Shutter",
+                  "icon": "mdi:window-shutter",
+                  "show_state": true,
+                  "slider_live_update": false,
+                  "tap_to_slide": false,
+                  "scrolling_effect": false,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "more-info"
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "sub_button": [
+                    {
+                      "icon": "mdi:chevron-up",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "cover.open_cover",
+                        "target": {
+                          "entity_id": "cover.panjur_tv"
+                        }
+                      }
+                    },
+                    {
+                      "icon": "mdi:stop",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "cover.stop_cover",
+                        "target": {
+                          "entity_id": "cover.panjur_tv"
+                        }
+                      }
+                    },
+                    {
+                      "icon": "mdi:chevron-down",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "cover.close_cover",
+                        "target": {
+                          "entity_id": "cover.panjur_tv"
+                        }
+                      }
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 24,
+                    "rows": 1
+                  },
+                  "card_mod": {
+                    "style": ":host {\n  --bubble-slider-fill-color: #e7b75f;\n}\n.bubble-range-fill {\n  background: #e7b75f !important;\n  background-image: none !important;\n}"
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "slider",
+                  "entity": "cover.panjur_2_sol",
+                  "name": "Shutter 2 (Left)",
+                  "icon": "mdi:window-shutter",
+                  "show_state": true,
+                  "slider_live_update": false,
+                  "tap_to_slide": false,
+                  "scrolling_effect": false,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "more-info"
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "sub_button": [
+                    {
+                      "icon": "mdi:chevron-up",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "cover.open_cover",
+                        "target": {
+                          "entity_id": "cover.panjur_2_sol"
+                        }
+                      }
+                    },
+                    {
+                      "icon": "mdi:stop",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "cover.stop_cover",
+                        "target": {
+                          "entity_id": "cover.panjur_2_sol"
+                        }
+                      }
+                    },
+                    {
+                      "icon": "mdi:chevron-down",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "cover.close_cover",
+                        "target": {
+                          "entity_id": "cover.panjur_2_sol"
+                        }
+                      }
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 24,
+                    "rows": 1
+                  },
+                  "card_mod": {
+                    "style": ":host {\n  --bubble-slider-fill-color: #e7b75f;\n}\n.bubble-range-fill {\n  background: #e7b75f !important;\n  background-image: none !important;\n}"
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "slider",
+                  "entity": "cover.panjorno_1",
+                  "name": "Shutter 1",
+                  "icon": "mdi:window-shutter",
+                  "show_state": true,
+                  "slider_live_update": false,
+                  "tap_to_slide": false,
+                  "scrolling_effect": false,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "more-info"
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "sub_button": [
+                    {
+                      "icon": "mdi:chevron-up",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "cover.open_cover",
+                        "target": {
+                          "entity_id": "cover.panjorno_1"
+                        }
+                      }
+                    },
+                    {
+                      "icon": "mdi:stop",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "cover.stop_cover",
+                        "target": {
+                          "entity_id": "cover.panjorno_1"
+                        }
+                      }
+                    },
+                    {
+                      "icon": "mdi:chevron-down",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "cover.close_cover",
+                        "target": {
+                          "entity_id": "cover.panjorno_1"
+                        }
+                      }
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 24,
+                    "rows": 1
+                  },
+                  "card_mod": {
+                    "style": ":host {\n  --bubble-slider-fill-color: #e7b75f;\n}\n.bubble-range-fill {\n  background: #e7b75f !important;\n  background-image: none !important;\n}"
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "slider",
+                  "entity": "cover.leyla_panjur",
+                  "name": "Leyla Shutter",
+                  "icon": "mdi:window-shutter",
+                  "show_state": true,
+                  "slider_live_update": false,
+                  "tap_to_slide": false,
+                  "scrolling_effect": false,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "more-info"
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "sub_button": [
+                    {
+                      "icon": "mdi:chevron-up",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "cover.open_cover",
+                        "target": {
+                          "entity_id": "cover.leyla_panjur"
+                        }
+                      }
+                    },
+                    {
+                      "icon": "mdi:stop",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "cover.stop_cover",
+                        "target": {
+                          "entity_id": "cover.leyla_panjur"
+                        }
+                      }
+                    },
+                    {
+                      "icon": "mdi:chevron-down",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "cover.close_cover",
+                        "target": {
+                          "entity_id": "cover.leyla_panjur"
+                        }
+                      }
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 24,
+                    "rows": 1
+                  },
+                  "card_mod": {
+                    "style": ":host {\n  --bubble-slider-fill-color: #e7b75f;\n}\n.bubble-range-fill {\n  background: #e7b75f !important;\n  background-image: none !important;\n}"
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "slider",
+                  "entity": "cover.yatak_odasi_panjur",
+                  "name": "Bedroom Shutter",
+                  "icon": "mdi:window-shutter",
+                  "show_state": true,
+                  "slider_live_update": false,
+                  "tap_to_slide": false,
+                  "scrolling_effect": false,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "more-info"
+                    },
+                    "double_tap_action": {
+                      "action": "none"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "sub_button": [
+                    {
+                      "icon": "mdi:chevron-up",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "cover.open_cover",
+                        "target": {
+                          "entity_id": "cover.yatak_odasi_panjur"
+                        }
+                      }
+                    },
+                    {
+                      "icon": "mdi:stop",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "cover.stop_cover",
+                        "target": {
+                          "entity_id": "cover.yatak_odasi_panjur"
+                        }
+                      }
+                    },
+                    {
+                      "icon": "mdi:chevron-down",
+                      "name": "",
+                      "show_background": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "cover.close_cover",
+                        "target": {
+                          "entity_id": "cover.yatak_odasi_panjur"
+                        }
+                      }
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 24,
+                    "rows": 1
+                  },
+                  "card_mod": {
+                    "style": ":host {\n  --bubble-slider-fill-color: #e7b75f;\n}\n.bubble-range-fill {\n  background: #e7b75f !important;\n  background-image: none !important;\n}"
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "separator",
+                  "name": "Bedroom",
+                  "icon": "mdi:home-thermometer-outline",
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": 1
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "state",
+                  "entity": "sensor.oda_sicaklik_nem_ekransiz_temperature",
+                  "name": "Temperature",
+                  "icon": "mdi:thermometer",
+                  "show_state": true,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "more-info"
+                    },
+                    "double_tap_action": {
+                      "action": "more-info"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "state",
+                  "entity": "sensor.oda_sicaklik_nem_ekransiz_humidity",
+                  "name": "Humidity",
+                  "icon": "mdi:water-percent",
+                  "show_state": true,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "more-info"
+                    },
+                    "double_tap_action": {
+                      "action": "more-info"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "slider",
+                  "entity": "light.oda_kartel",
+                  "name": "Kartel Lamp (Bedroom)",
+                  "icon": "mdi:lamp",
+                  "show_state": true,
+                  "slider_live_update": false,
+                  "light_transition": true,
+                  "tap_to_slide": false,
+                  "button_action": {
+                    "tap_action": {
+                      "action": "toggle"
+                    },
+                    "double_tap_action": {
+                      "action": "more-info"
+                    },
+                    "hold_action": {
+                      "action": "more-info"
+                    }
+                  },
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": 1
+                  },
+                  "scrolling_effect": false
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "pop-up",
+                  "hash": "#salon",
+                  "name": "Living Room",
+                  "icon": "mdi:sofa",
+                  "show_header": true,
+                  "show_close_button": true,
+                  "close_by_clicking_outside": true,
+                  "slide_to_close_distance": 120,
+                  "bg_blur": 14,
+                  "backdrop_blur": 6,
+                  "bg_opacity": 94,
+                  "shadow_opacity": 0,
+                  "margin_top_mobile": "2px",
+                  "margin_top_desktop": "80px",
+                  "width_desktop": "540px",
+                  "cards": [
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Air Conditioning",
+                      "icon": "mdi:snowflake",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "state",
+                      "entity": "input_select.salon_klima_mod",
+                      "name": "Air Conditioning Panel",
+                      "icon": "mdi:air-conditioner",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "navigate",
+                          "navigation_path": "/ac-control/aircon"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      },
+                      "scrolling_effect": false
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Scenes",
+                      "icon": "mdi:palette-outline",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "name",
+                      "name": "Evening",
+                      "icon": "mdi:lamps",
+                      "show_icon": true,
+                      "show_name": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "scene.turn_on",
+                        "target": {
+                          "entity_id": "scene.aksam"
+                        },
+                        "data": {
+                          "transition": 2
+                        }
+                      },
+                      "button_action": {
+                        "tap_action": {
+                          "action": "perform-action",
+                          "perform_action": "scene.turn_on",
+                          "target": {
+                            "entity_id": "scene.aksam"
+                          },
+                          "data": {
+                            "transition": 2
+                          }
+                        },
+                        "double_tap_action": {
+                          "action": "none"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      },
+                      "scrolling_effect": false
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "name",
+                      "name": "Film",
+                      "icon": "mdi:movie-open",
+                      "show_icon": true,
+                      "show_name": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "scene.turn_on",
+                        "target": {
+                          "entity_id": "scene.film"
+                        },
+                        "data": {
+                          "transition": 2
+                        }
+                      },
+                      "button_action": {
+                        "tap_action": {
+                          "action": "perform-action",
+                          "perform_action": "scene.turn_on",
+                          "target": {
+                            "entity_id": "scene.film"
+                          },
+                          "data": {
+                            "transition": 2
+                          }
+                        },
+                        "double_tap_action": {
+                          "action": "none"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      },
+                      "scrolling_effect": false
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "name",
+                      "name": "Night",
+                      "icon": "mdi:weather-night",
+                      "show_icon": true,
+                      "show_name": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "scene.turn_on",
+                        "target": {
+                          "entity_id": "scene.gece"
+                        },
+                        "data": {
+                          "transition": 2
+                        }
+                      },
+                      "button_action": {
+                        "tap_action": {
+                          "action": "perform-action",
+                          "perform_action": "scene.turn_on",
+                          "target": {
+                            "entity_id": "scene.gece"
+                          },
+                          "data": {
+                            "transition": 2
+                          }
+                        },
+                        "double_tap_action": {
+                          "action": "none"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      },
+                      "scrolling_effect": false
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "name",
+                      "name": "Guests",
+                      "icon": "mdi:account-group",
+                      "show_icon": true,
+                      "show_name": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "scene.turn_on",
+                        "target": {
+                          "entity_id": "scene.misafir"
+                        },
+                        "data": {
+                          "transition": 2
+                        }
+                      },
+                      "button_action": {
+                        "tap_action": {
+                          "action": "perform-action",
+                          "perform_action": "scene.turn_on",
+                          "target": {
+                            "entity_id": "scene.misafir"
+                          },
+                          "data": {
+                            "transition": 2
+                          }
+                        },
+                        "double_tap_action": {
+                          "action": "none"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      },
+                      "scrolling_effect": false
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "name",
+                      "name": "Dinner",
+                      "icon": "mdi:silverware-fork-knife",
+                      "show_icon": true,
+                      "show_name": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "scene.turn_on",
+                        "target": {
+                          "entity_id": "scene.yemek"
+                        },
+                        "data": {
+                          "transition": 2
+                        }
+                      },
+                      "button_action": {
+                        "tap_action": {
+                          "action": "perform-action",
+                          "perform_action": "scene.turn_on",
+                          "target": {
+                            "entity_id": "scene.yemek"
+                          },
+                          "data": {
+                            "transition": 2
+                          }
+                        },
+                        "double_tap_action": {
+                          "action": "none"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      },
+                      "scrolling_effect": false
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "name",
+                      "name": "Morning",
+                      "icon": "mdi:coffee",
+                      "show_icon": true,
+                      "show_name": true,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "scene.turn_on",
+                        "target": {
+                          "entity_id": "scene.sabah"
+                        },
+                        "data": {
+                          "transition": 2
+                        }
+                      },
+                      "button_action": {
+                        "tap_action": {
+                          "action": "perform-action",
+                          "perform_action": "scene.turn_on",
+                          "target": {
+                            "entity_id": "scene.sabah"
+                          },
+                          "data": {
+                            "transition": 2
+                          }
+                        },
+                        "double_tap_action": {
+                          "action": "none"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      },
+                      "scrolling_effect": false
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Ceiling",
+                      "icon": "mdi:ceiling-light",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "switch.salon_aydinlatma_l1",
+                      "name": "Ceiling Light 1",
+                      "icon": "mdi:ceiling-light",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "switch.salon_aydinlatma_l2",
+                      "name": "Ceiling Light 2",
+                      "icon": "mdi:ceiling-light",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "switch.tv_aydinlatma_l1",
+                      "name": "TV Light 1",
+                      "icon": "mdi:track-light",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "switch.tv_aydinlatma_l2",
+                      "name": "TV Light 2",
+                      "icon": "mdi:track-light",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Hue",
+                      "icon": "mdi:lightbulb-on-outline",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "slider",
+                      "entity": "light.tv_dixon_hue",
+                      "name": "TV Dixon",
+                      "icon": "mdi:floor-lamp",
+                      "show_state": true,
+                      "slider_live_update": false,
+                      "light_transition": true,
+                      "tap_to_slide": false,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "slider",
+                      "entity": "light.beyaz_aplik_hue",
+                      "name": "White Wall Light",
+                      "icon": "mdi:lamp",
+                      "show_state": true,
+                      "slider_live_update": false,
+                      "light_transition": true,
+                      "tap_to_slide": false,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "slider",
+                      "entity": "light.bitki_hasir_hue",
+                      "name": "Plant Pot Light",
+                      "icon": "mdi:flower-tulip",
+                      "show_state": true,
+                      "slider_live_update": false,
+                      "light_transition": true,
+                      "tap_to_slide": false,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "slider",
+                      "entity": "light.kartel_salon",
+                      "name": "Kartel Lamp",
+                      "icon": "mdi:lamp",
+                      "show_state": true,
+                      "slider_live_update": false,
+                      "light_transition": true,
+                      "tap_to_slide": false,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "slider",
+                      "entity": "light.salon_calisma_masasi",
+                      "name": "Desk Lamp",
+                      "icon": "mdi:desk-lamp",
+                      "show_state": true,
+                      "slider_live_update": false,
+                      "light_transition": true,
+                      "tap_to_slide": false,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "slider",
+                      "entity": "light.tv_yer",
+                      "name": "TV Floor Lamp",
+                      "icon": "mdi:floor-lamp",
+                      "show_state": true,
+                      "slider_live_update": false,
+                      "light_transition": true,
+                      "tap_to_slide": false,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Shutters",
+                      "icon": "mdi:window-shutter",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "slider",
+                      "entity": "cover.panjur_tv",
+                      "name": "TV Shutter",
+                      "icon": "mdi:window-shutter",
+                      "show_state": true,
+                      "slider_live_update": false,
+                      "tap_to_slide": false,
+                      "scrolling_effect": false,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "more-info"
+                        },
+                        "double_tap_action": {
+                          "action": "none"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "sub_button": [
+                        {
+                          "icon": "mdi:chevron-up",
+                          "name": "",
+                          "show_background": true,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "cover.open_cover",
+                            "target": {
+                              "entity_id": "cover.panjur_tv"
+                            }
+                          }
+                        },
+                        {
+                          "icon": "mdi:stop",
+                          "name": "",
+                          "show_background": true,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "cover.stop_cover",
+                            "target": {
+                              "entity_id": "cover.panjur_tv"
+                            }
+                          }
+                        },
+                        {
+                          "icon": "mdi:chevron-down",
+                          "name": "",
+                          "show_background": true,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "cover.close_cover",
+                            "target": {
+                              "entity_id": "cover.panjur_tv"
+                            }
+                          }
+                        }
+                      ],
+                      "grid_options": {
+                        "columns": 24,
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "slider",
+                      "entity": "cover.panjur_2_sol",
+                      "name": "Shutter 2 (Left)",
+                      "icon": "mdi:window-shutter",
+                      "show_state": true,
+                      "slider_live_update": false,
+                      "tap_to_slide": false,
+                      "scrolling_effect": false,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "more-info"
+                        },
+                        "double_tap_action": {
+                          "action": "none"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "sub_button": [
+                        {
+                          "icon": "mdi:chevron-up",
+                          "name": "",
+                          "show_background": true,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "cover.open_cover",
+                            "target": {
+                              "entity_id": "cover.panjur_2_sol"
+                            }
+                          }
+                        },
+                        {
+                          "icon": "mdi:stop",
+                          "name": "",
+                          "show_background": true,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "cover.stop_cover",
+                            "target": {
+                              "entity_id": "cover.panjur_2_sol"
+                            }
+                          }
+                        },
+                        {
+                          "icon": "mdi:chevron-down",
+                          "name": "",
+                          "show_background": true,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "cover.close_cover",
+                            "target": {
+                              "entity_id": "cover.panjur_2_sol"
+                            }
+                          }
+                        }
+                      ],
+                      "grid_options": {
+                        "columns": 24,
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "slider",
+                      "entity": "cover.panjorno_1",
+                      "name": "Shutter 1",
+                      "icon": "mdi:window-shutter",
+                      "show_state": true,
+                      "slider_live_update": false,
+                      "tap_to_slide": false,
+                      "scrolling_effect": false,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "more-info"
+                        },
+                        "double_tap_action": {
+                          "action": "none"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "sub_button": [
+                        {
+                          "icon": "mdi:chevron-up",
+                          "name": "",
+                          "show_background": true,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "cover.open_cover",
+                            "target": {
+                              "entity_id": "cover.panjorno_1"
+                            }
+                          }
+                        },
+                        {
+                          "icon": "mdi:stop",
+                          "name": "",
+                          "show_background": true,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "cover.stop_cover",
+                            "target": {
+                              "entity_id": "cover.panjorno_1"
+                            }
+                          }
+                        },
+                        {
+                          "icon": "mdi:chevron-down",
+                          "name": "",
+                          "show_background": true,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "cover.close_cover",
+                            "target": {
+                              "entity_id": "cover.panjorno_1"
+                            }
+                          }
+                        }
+                      ],
+                      "grid_options": {
+                        "columns": 24,
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Automatic",
+                      "icon": "mdi:auto-fix",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "input_boolean.adaptif_isik",
+                      "name": "Adaptive Lighting",
+                      "icon": "mdi:theme-light-dark",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "pop-up",
+                  "hash": "#giris",
+                  "name": "Entrance",
+                  "icon": "mdi:door-open",
+                  "show_header": true,
+                  "show_close_button": true,
+                  "close_by_clicking_outside": true,
+                  "slide_to_close_distance": 120,
+                  "bg_blur": 14,
+                  "backdrop_blur": 6,
+                  "bg_opacity": 94,
+                  "shadow_opacity": 0,
+                  "margin_top_mobile": "2px",
+                  "margin_top_desktop": "80px",
+                  "width_desktop": "540px",
+                  "cards": [
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Wardrobe / Mirror",
+                      "icon": "mdi:mirror",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "switch.giris_aydinlatma_dolap_ayna_l1",
+                      "name": "Wardrobe",
+                      "icon": "mdi:wardrobe",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "switch.giris_aydinlatma_dolap_ayna_l2",
+                      "name": "Mirror",
+                      "icon": "mdi:mirror",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Art Wall",
+                      "icon": "mdi:image-frame",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "switch.giris_aydinlatma_sanat_sokak_l1",
+                      "name": "Art Wall 1",
+                      "icon": "mdi:wall-sconce",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "switch.giris_aydinlatma_sanat_sokak_l2",
+                      "name": "Art Wall 2",
+                      "icon": "mdi:wall-sconce",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Door",
+                      "icon": "mdi:door",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "state",
+                      "entity": "binary_sensor.sokak_kapisi_contact",
+                      "name": "Front Door",
+                      "icon": "mdi:door-closed",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "more-info"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "show_last_changed": true,
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "state",
+                      "entity": "sensor.sokak_kapisi_battery",
+                      "name": "Sensor Battery",
+                      "icon": "mdi:battery",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "more-info"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Camera",
+                      "icon": "mdi:cctv",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "input_boolean.giris_kamera_canli_izleme",
+                      "name": "Live View (go2rtc)",
+                      "icon": "mdi:cctv",
+                      "show_state": true,
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": "auto"
+                      }
+                    },
+                    {
+                      "type": "conditional",
+                      "conditions": [
+                        {
+                          "condition": "state",
+                          "entity": "input_boolean.giris_kamera_canli_izleme",
+                          "state": "on"
+                        }
+                      ],
+                      "card": {
+                        "type": "custom:webrtc-camera",
+                        "url": "tapo_kapi",
+                        "ui": true,
+                        "grid_options": {
+                          "columns": "full",
+                          "rows": "auto"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "pop-up",
+                  "hash": "#leyla",
+                  "name": "Leyla",
+                  "icon": "mdi:bed",
+                  "show_header": true,
+                  "show_close_button": true,
+                  "close_by_clicking_outside": true,
+                  "slide_to_close_distance": 120,
+                  "bg_blur": 14,
+                  "backdrop_blur": 6,
+                  "bg_opacity": 94,
+                  "shadow_opacity": 0,
+                  "margin_top_mobile": "2px",
+                  "margin_top_desktop": "80px",
+                  "width_desktop": "540px",
+                  "cards": [
+                    {
+                      "type": "picture-entity",
+                      "entity": "camera.leylas_room_hd_stream_direct",
+                      "camera_view": "auto",
+                      "show_name": false,
+                      "show_state": false,
+                      "tap_action": {
+                        "action": "more-info"
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": "auto"
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "input_boolean.leyla_kamera_canli_izleme",
+                      "name": "Live View (go2rtc)",
+                      "icon": "mdi:cctv",
+                      "show_state": true,
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": "auto"
+                      }
+                    },
+                    {
+                      "type": "conditional",
+                      "conditions": [
+                        {
+                          "condition": "state",
+                          "entity": "input_boolean.leyla_kamera_canli_izleme",
+                          "state": "on"
+                        }
+                      ],
+                      "card": {
+                        "type": "custom:webrtc-camera",
+                        "url": "tapo_c225",
+                        "ui": true,
+                        "grid_options": {
+                          "columns": "full",
+                          "rows": "auto"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Air Conditioning",
+                      "icon": "mdi:snowflake",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "state",
+                      "entity": "input_select.leyla_klima_mod",
+                      "name": "Air Conditioning Panel",
+                      "icon": "mdi:air-conditioner",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "navigate",
+                          "navigation_path": "/ac-control/aircon"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      },
+                      "scrolling_effect": false
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Power",
+                      "icon": "mdi:power-plug",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "switch.ikinci_priz",
+                      "name": "Dyson Plug",
+                      "icon": "mdi:power-socket-eu",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Spotlights",
+                      "icon": "mdi:spotlight-beam",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "slider",
+                      "entity": "light.leyla_huespot_sol",
+                      "name": "Left Spotlight",
+                      "icon": "mdi:wall-sconce-flat",
+                      "show_state": true,
+                      "slider_live_update": false,
+                      "light_transition": true,
+                      "tap_to_slide": false,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "slider",
+                      "entity": "light.leyla_huespot_sag",
+                      "name": "Right Spotlight",
+                      "icon": "mdi:wall-sconce-flat",
+                      "show_state": true,
+                      "slider_live_update": false,
+                      "light_transition": true,
+                      "tap_to_slide": false,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Shutter",
+                      "icon": "mdi:window-shutter",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "slider",
+                      "entity": "cover.leyla_panjur",
+                      "name": "Shutter",
+                      "icon": "mdi:window-shutter",
+                      "show_state": true,
+                      "slider_live_update": false,
+                      "tap_to_slide": false,
+                      "scrolling_effect": false,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "more-info"
+                        },
+                        "double_tap_action": {
+                          "action": "none"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "sub_button": [
+                        {
+                          "icon": "mdi:chevron-up",
+                          "name": "",
+                          "show_background": true,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "cover.open_cover",
+                            "target": {
+                              "entity_id": "cover.leyla_panjur"
+                            }
+                          }
+                        },
+                        {
+                          "icon": "mdi:stop",
+                          "name": "",
+                          "show_background": true,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "cover.stop_cover",
+                            "target": {
+                              "entity_id": "cover.leyla_panjur"
+                            }
+                          }
+                        },
+                        {
+                          "icon": "mdi:chevron-down",
+                          "name": "",
+                          "show_background": true,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "cover.close_cover",
+                            "target": {
+                              "entity_id": "cover.leyla_panjur"
+                            }
+                          }
+                        }
+                      ],
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "pop-up",
+                  "hash": "#oda",
+                  "name": "Bedroom",
+                  "icon": "mdi:bed-king-outline",
+                  "show_header": true,
+                  "show_close_button": true,
+                  "close_by_clicking_outside": true,
+                  "slide_to_close_distance": 120,
+                  "bg_blur": 14,
+                  "backdrop_blur": 6,
+                  "bg_opacity": 94,
+                  "shadow_opacity": 0,
+                  "margin_top_mobile": "2px",
+                  "margin_top_desktop": "80px",
+                  "width_desktop": "540px",
+                  "cards": [
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Air Conditioning",
+                      "icon": "mdi:snowflake",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "state",
+                      "entity": "input_select.oda_klima_mod",
+                      "name": "Air Conditioning Panel",
+                      "icon": "mdi:air-conditioner",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "navigate",
+                          "navigation_path": "/ac-control/aircon"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      },
+                      "scrolling_effect": false
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Climate",
+                      "icon": "mdi:thermometer",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "state",
+                      "entity": "sensor.oda_sicaklik_nem_ekransiz_temperature",
+                      "name": "Temperature",
+                      "icon": "mdi:thermometer",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "more-info"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      },
+                      "scrolling_effect": false
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "state",
+                      "entity": "sensor.oda_sicaklik_nem_ekransiz_humidity",
+                      "name": "Humidity",
+                      "icon": "mdi:water-percent",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "more-info"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      },
+                      "scrolling_effect": false
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Lighting",
+                      "icon": "mdi:lightbulb-outline",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "slider",
+                      "entity": "light.oda_kartel",
+                      "name": "Kartel Lamp (Bedroom)",
+                      "icon": "mdi:lamp",
+                      "show_state": true,
+                      "slider_live_update": false,
+                      "light_transition": true,
+                      "tap_to_slide": false,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Media",
+                      "icon": "mdi:television",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "state",
+                      "entity": "media_player.master_bedroom_tv",
+                      "name": "Master Bedroom TV",
+                      "icon": "mdi:cast",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "more-info"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      },
+                      "scrolling_effect": false
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Shutter",
+                      "icon": "mdi:window-shutter",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "slider",
+                      "entity": "cover.yatak_odasi_panjur",
+                      "name": "Shutter",
+                      "icon": "mdi:window-shutter",
+                      "show_state": true,
+                      "slider_live_update": false,
+                      "tap_to_slide": false,
+                      "scrolling_effect": false,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "more-info"
+                        },
+                        "double_tap_action": {
+                          "action": "none"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "sub_button": [
+                        {
+                          "icon": "mdi:chevron-up",
+                          "name": "",
+                          "show_background": true,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "cover.open_cover",
+                            "target": {
+                              "entity_id": "cover.yatak_odasi_panjur"
+                            }
+                          }
+                        },
+                        {
+                          "icon": "mdi:stop",
+                          "name": "",
+                          "show_background": true,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "cover.stop_cover",
+                            "target": {
+                              "entity_id": "cover.yatak_odasi_panjur"
+                            }
+                          }
+                        },
+                        {
+                          "icon": "mdi:chevron-down",
+                          "name": "",
+                          "show_background": true,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "cover.close_cover",
+                            "target": {
+                              "entity_id": "cover.yatak_odasi_panjur"
+                            }
+                          }
+                        }
+                      ],
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "pop-up",
+                  "hash": "#isodasi",
+                  "name": "Home Office",
+                  "icon": "mdi:desk",
+                  "show_header": true,
+                  "show_close_button": true,
+                  "close_by_clicking_outside": true,
+                  "slide_to_close_distance": 120,
+                  "bg_blur": 14,
+                  "backdrop_blur": 6,
+                  "bg_opacity": 94,
+                  "shadow_opacity": 0,
+                  "margin_top_mobile": "2px",
+                  "margin_top_desktop": "80px",
+                  "width_desktop": "540px",
+                  "cards": [
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Lighting",
+                      "icon": "mdi:lightbulb-group",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "switch.is_odasi_aydinlatma",
+                      "name": "Main Light",
+                      "icon": "mdi:ceiling-light",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "switch.is_odasi_giris_aydinlatma",
+                      "name": "Entrance Light",
+                      "icon": "mdi:door",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "pop-up",
+                  "hash": "#camasir",
+                  "name": "Laundry Room",
+                  "icon": "mdi:washing-machine",
+                  "show_header": true,
+                  "show_close_button": true,
+                  "close_by_clicking_outside": true,
+                  "slide_to_close_distance": 120,
+                  "bg_blur": 14,
+                  "backdrop_blur": 6,
+                  "bg_opacity": 94,
+                  "shadow_opacity": 0,
+                  "margin_top_mobile": "2px",
+                  "margin_top_desktop": "80px",
+                  "width_desktop": "540px",
+                  "cards": [
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Lighting",
+                      "icon": "mdi:lightbulb-group",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "switch.camasir_aydinlatma",
+                      "name": "Laundry Light",
+                      "icon": "mdi:washing-machine",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Door",
+                      "icon": "mdi:door",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "state",
+                      "entity": "binary_sensor.camasir_kapi_sensor_contact",
+                      "name": "Laundry Door",
+                      "icon": "mdi:door",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "more-info"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      },
+                      "scrolling_effect": false,
+                      "show_last_changed": true
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "state",
+                      "entity": "sensor.camasir_kapi_sensor_battery",
+                      "name": "Sensor Battery",
+                      "icon": "mdi:battery",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "more-info"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      },
+                      "scrolling_effect": false
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "pop-up",
+                  "hash": "#mutfak",
+                  "name": "Kitchen",
+                  "icon": "mdi:fridge-outline",
+                  "show_header": true,
+                  "show_close_button": true,
+                  "close_by_clicking_outside": true,
+                  "slide_to_close_distance": 120,
+                  "bg_blur": 14,
+                  "backdrop_blur": 6,
+                  "bg_opacity": 94,
+                  "shadow_opacity": 0,
+                  "margin_top_mobile": "2px",
+                  "margin_top_desktop": "80px",
+                  "width_desktop": "540px",
+                  "cards": [
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Climate",
+                      "icon": "mdi:thermometer",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "state",
+                      "entity": "sensor.mutfak_termo_temperature",
+                      "name": "Temperature",
+                      "icon": "mdi:thermometer",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "more-info"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      },
+                      "scrolling_effect": false
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "separator",
+                      "name": "Lighting",
+                      "icon": "mdi:lightbulb-group",
+                      "grid_options": {
+                        "columns": "full",
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "switch.mutfak_aydinlatma_l1",
+                      "name": "Fridge Light",
+                      "icon": "mdi:fridge-outline",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      }
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "switch.mutfak_aydinlatma_l2",
+                      "name": "Under-Counter Light",
+                      "icon": "mdi:led-strip-variant",
+                      "show_state": true,
+                      "button_action": {
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "double_tap_action": {
+                          "action": "more-info"
+                        },
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      "grid_options": {
+                        "columns": 6,
+                        "rows": 1
+                      }
+                    }
+                  ]
+                }
+              ],
+              "column_span": 2,
+              "card_mod": {
+                "style": ":host {\n  --bubble-border-radius: 16px;\n  --bubble-button-border-radius: 16px;\n  --bubble-icon-border-radius: 14px;\n  --bubble-main-background-color: rgba(23,29,40,.80);\n  --bubble-button-background-color: rgba(23,29,40,.80);\n  --bubble-button-main-background-color: rgba(23,29,40,.80);\n  --bubble-icon-background-color: rgba(255,255,255,.07);\n  --bubble-button-icon-background-color: rgba(255,255,255,.07);\n  --bubble-sub-button-background-color: rgba(255,255,255,.08);\n  --bubble-border: 1px solid rgba(255,255,255,.06);\n  --bubble-box-shadow: 0 12px 30px -20px rgba(0,0,0,.9);\n  --bubble-separator-border: 1px solid rgba(255,255,255,.10);\n  --bubble-pop-up-background-color: rgba(13,18,27,.94);\n  --bubble-pop-up-border-radius: 26px;\n  --bubble-backdrop-background-color: rgba(4,7,12,.55);\n  font-family: \"Nunito\", \"Roboto\", sans-serif;\n}\nbubble-card, bubble-card * { font-family: \"Nunito\", \"Roboto\", sans-serif !important; }"
+              }
+            }
+          ],
+          "max_columns": 4
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_datetime",
+  "data": {
+    "items": [
+      {
+        "id": "salon_klima_son_komut",
+        "name": "Salon Klima Son Komut",
+        "has_date": true,
+        "has_time": true,
+        "icon": "mdi:remote"
+      },
+      {
+        "id": "leyla_klima_son_komut",
+        "name": "Leyla Klima Son Komut",
+        "has_date": true,
+        "has_time": true,
+        "icon": "mdi:remote"
+      },
+      {
+        "id": "oda_klima_son_komut",
+        "name": "Oda Klima Son Komut",
+        "has_date": true,
+        "has_time": true,
+        "icon": "mdi:remote"
+      },
+      {
+        "id": "am07_son_komut",
+        "name": "AM07 Son Komut",
+        "has_date": true,
+        "has_time": true,
+        "icon": "mdi:remote"
+      }
+    ]
+  }
+}

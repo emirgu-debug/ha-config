@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "timer",
+  "data": {
+    "items": [
+      {
+        "id": "salon_klima_timer",
+        "name": "Salon Klima Timer",
+        "duration": "1:00:00",
+        "restore": true,
+        "icon": "mdi:timer-outline"
+      },
+      {
+        "id": "leyla_klima_timer",
+        "name": "Leyla Klima Timer",
+        "duration": "1:00:00",
+        "restore": true,
+        "icon": "mdi:timer-outline"
+      },
+      {
+        "id": "oda_klima_timer",
+        "name": "Oda Klima Timer",
+        "duration": "1:00:00",
+        "restore": true,
+        "icon": "mdi:timer-outline"
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_dashboards",
+  "data": {
+    "items": [
+      {
+        "id": "map",
+        "icon": "mdi:map",
+        "title": "Map",
+        "url_path": "map",
+        "show_in_sidebar": true,
+        "mode": "storage",
+        "require_admin": false
+      },
+      {
+        "id": "dashboard_otomatik",
+        "show_in_sidebar": true,
+        "icon": "mdi:robot",
+        "title": "Otomatik",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-otomatik"
+      },
+      {
+        "id": "dashboard_tesla",
+        "show_in_sidebar": true,
+        "icon": "mdi:car-connected",
+        "title": "Tesla",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-tesla"
+      },
+      {
+        "id": "ac_control",
+        "require_admin": false,
+        "show_in_sidebar": true,
+        "title": "AC Control",
+        "url_path": "ac-control",
+        "mode": "storage"
+      },
+      {
+        "id": "dashboard_kobay2",
+        "require_admin": false,
+        "show_in_sidebar": true,
+        "icon": "mdi:abacus",
+        "title": "Floor Plan",
+        "url_path": "dashboard-kobay2",
+        "mode": "storage"
+      },
+      {
+        "id": "sky_home",
+        "url_path": "sky-home",
+        "title": "Sky & Home",
+        "icon": "mdi:weather-night",
+        "show_in_sidebar": true,
+        "require_admin": false,
+        "mode": "storage"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+.room{cursor:pointer;stroke:#999;transition:fill .3s,fill-opacity .3s;}
+.room-off{fill:#ccc;fill-opacity:.12;}
+.room-on{fill:#ffd54f;fill-opacity:.45;}
+.light{cursor:pointer;stroke:#555;transition:fill .2s;}
+.light-off{fill:#9e9e9e;}
+.light-on{fill:#ffc107;filter:drop-shadow(0 0 6px #ffc107);}
+.cover-up,.cover-down{cursor:pointer;fill:#78909c;stroke:#37474f;transition:fill .2s;}
+.cover-up:hover,.cover-down:hover{fill:#37474f;}
+.cover{cursor:pointer;stroke:#37474f;}
+.cover-open{fill:#66bb6a;}
+.cover-closed{fill:#ef5350;}
+.cover-moving{fill:#ffa726;}
+.door{cursor:default;stroke:#37474f;}
+.door-open{fill:#ef5350;}
+.door-closed{fill:#66bb6a;}
+.sensor-text{fill:#263238;pointer-events:none;font-weight:500;}
+.ac-icon{cursor:pointer;fill:#29b6f6;stroke:#01579b;transition:fill .2s;}
+.ac-icon:hover{fill:#0288d1;}
+.ac-icon-label{fill:#fff;pointer-events:none;font-weight:700;}.camera-icon{cursor:pointer;fill:#455a64;stroke:#263238;stroke-width:2;}.camera-lens-ring{fill:#78909c;stroke:#263238;stroke-width:1.5;pointer-events:none;}

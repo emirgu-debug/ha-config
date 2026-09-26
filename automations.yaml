@@ -1,0 +1,397 @@
+- id: '1786819188146'
+  alias: Turn On Living Room TV with WakeOnLan
+  description: Explicit Wake-On-LAN replacement for deprecated implicit WOL (Samsung
+    TV)
+  triggers:
+  - trigger: samsungtv.turn_on
+    entity_id: media_player.34_odyssey_oled_g8_ls34bg850suxuf
+  conditions: []
+  actions:
+  - action: wake_on_lan.send_magic_packet
+    data:
+      mac: B0:99:D7:D3:3B:E2
+  mode: single
+- id: '1788894206121'
+  alias: KAPI AÇILINCA IŞIK AÇILSIN
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id: binary_sensor.sokak_kapisi_contact
+    to: 'on'
+    id: opened
+  - trigger: state
+    entity_id: binary_sensor.sokak_kapisi_contact
+    to: 'off'
+    id: closed
+  conditions: []
+  actions:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: opened
+      sequence:
+      - action: switch.turn_on
+        target:
+          entity_id: switch.giris_aydinlatma_dolap_ayna_l1
+    - conditions:
+      - condition: trigger
+        id: closed
+      sequence:
+      - delay:
+          seconds: 20
+      - action: switch.turn_off
+        target:
+          entity_id: switch.giris_aydinlatma_dolap_ayna_l1
+  mode: restart
+- id: '1789069942750'
+  alias: Toprak Sensor 01 - Low Soil Moisture Alert
+  description: Notifies Emir's phone when Toprak-Sensor-01 soil moisture drops to
+    30% or below, as a reminder to water the plant.
+  triggers:
+  - platform: numeric_state
+    entity_id: sensor.toprak_sensor_01_soil_moisture
+    below: 31
+  conditions: []
+  actions:
+  - data:
+      title: "\U0001F331 Soil moisture low"
+      message: Toprak-Sensor-01 moisture dropped to {{ states('sensor.toprak_sensor_01_soil_moisture')
+        }}%. Time to water the plant.
+    action: notify.mobile_app_iphone_emir
+  mode: single
+- id: '1789070241083'
+  alias: Apple TV Playback - PANJUR_TV Shutter
+  description: Closes PANJUR_TV when the Apple TV (Living Room) starts playing, but
+    only during the day (before sunset). Reopens it if playback stays paused/stopped
+    for 10 minutes.
+  triggers:
+  - platform: state
+    entity_id: media_player.living_room_living_room
+    to: playing
+    id: play
+  - platform: state
+    entity_id: media_player.living_room_living_room
+    to:
+    - paused
+    - idle
+    for:
+      minutes: 10
+    id: stop
+  conditions: []
+  actions:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: play
+      - condition: state
+        entity_id: sun.sun
+        state: above_horizon
+      sequence:
+      - target:
+          entity_id: cover.panjur_tv
+        action: cover.close_cover
+    - conditions:
+      - condition: trigger
+        id: stop
+      sequence:
+      - target:
+          entity_id: cover.panjur_tv
+        action: cover.open_cover
+  mode: restart
+- id: '1789105284347'
+  alias: Leyla Oda Dyson Sicaklik - LEYLA_Klima Kontrol
+  description: Turns LEYLA_Klima on at 26°C when the Dyson X6P-EU-THB1395A (Leyla
+    Oda) temperature reaches 28°C, and turns it off when it drops back to 26°C.
+  triggers:
+  - platform: numeric_state
+    entity_id: sensor.dyson_x6p_eu_thb1395a_temperature
+    above: 27.9
+    id: hot
+  - platform: numeric_state
+    entity_id: sensor.dyson_x6p_eu_thb1395a_temperature
+    below: 26.1
+    id: cool
+  conditions: []
+  actions:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: hot
+      sequence:
+      - data:
+          unit: leyla
+          temp: 26
+        action: script.ac_set_temperature
+    - conditions:
+      - condition: trigger
+        id: cool
+      sequence:
+      - data:
+          unit: leyla
+        action: script.ac_turn_off
+  mode: single
+- id: '1789107321958'
+  alias: Oda Klima - Gece Sicaklik Dongusu (22:00-08:00)
+  description: Between 22:00 and 08:00, turns ODA_KLİMA on at 24°C when the Bedroom
+    sensor (Oda_Sıcaklık_Nem_Ekransız) hits 27°C, and off when it drops to 25°C. Forces
+    it off at 08:00 regardless.
+  triggers:
+  - entity_id:
+    - sensor.oda_sicaklik_nem_ekransiz_temperature
+    above: 26
+    id: hot
+    trigger: numeric_state
+  - entity_id:
+    - sensor.oda_sicaklik_nem_ekransiz_temperature
+    below: 24.9
+    id: cool
+    trigger: numeric_state
+  - at: 08:00:00
+    id: morning_off
+    trigger: time
+  conditions: []
+  actions:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: hot
+      - condition: time
+        after: '22:00:00'
+        before: 08:00:00
+      sequence:
+      - data:
+          unit: oda
+          temp: 24
+        action: script.ac_set_temperature
+    - conditions:
+      - condition: trigger
+        id: cool
+      - condition: time
+        after: '22:00:00'
+        before: 08:00:00
+      sequence:
+      - data:
+          unit: oda
+        action: script.ac_turn_off
+    - conditions:
+      - condition: trigger
+        id: morning_off
+      sequence:
+      - data:
+          unit: oda
+        action: script.ac_turn_off
+  mode: single
+- id: am07_hiz_senkron
+  alias: AM07 hiz senkron
+  description: Debounced reconciler for the AM07 fan speed. 30 s after the last speed
+    change it compares the commanded speed (input_number.am07_hiz) with the measured
+    one (sensor.am07_olculen_hiz, derived from ikinci_priz wattage). If the IR blaster
+    missed presses it resends up to 3 pulses, then snaps the helper to whatever the
+    fan is actually doing, so the panel can never drift.
+  triggers:
+  - trigger: state
+    entity_id: sensor.am07_olculen_hiz
+  - trigger: state
+    entity_id: input_number.am07_hiz
+  conditions:
+  - condition: state
+    entity_id: binary_sensor.ikinci_priz_am07_calisiyor
+    state: 'on'
+  actions:
+  - delay:
+      seconds: 30
+  - variables:
+      target: '{{ states(''input_number.am07_hiz'') | int(0) }}'
+      actual: '{{ states(''sensor.am07_olculen_hiz'') | int(0) }}'
+  - condition: template
+    value_template: '{{ actual | int(0) > 0 and target | int(0) != actual | int(0)
+      }}'
+  - repeat:
+      count: '{{ [ (target | int(0) - actual | int(0)) | abs, 3 ] | min }}'
+      sequence:
+      - action: text.set_value
+        target:
+          entity_id: text.salon_klima_ir_code_to_send
+        data:
+          value: '{{ ''HwoJfgPGApMGxgJ+A8YCZAPGAnkGxgJkA8YCZAPGAmQDH8YCmAPGApMGxgJ+A8YCkwbGAmQDxgJ5BsYCZAPGAnkGA8YCzrE=''
+            if target | int(0) > actual | int(0) else ''H4cIfgPGApMGxgJ+A8YCZAPGAnkGxgJkA8YCZAPGAmQDH8YCrQbGApMGxgKTBsYCkwbGAnkGxgJ5BsYCZAPGAmQDA8YCzrE=''
+            }}'
+      - delay:
+          milliseconds: 900
+  - delay:
+      seconds: 20
+  - action: input_number.set_value
+    target:
+      entity_id: input_number.am07_hiz
+    data:
+      value: '{{ [ states(''sensor.am07_olculen_hiz'') | int(1), 1 ] | max }}'
+  mode: restart
+- id: appletv_tv_dixon_isik
+  alias: Apple TV · TV Dixon ışığı
+  description: Hava karardıktan sonra Apple TV oynatmaya başlayınca TV Dixon spotunu
+    açar. Apple TV uykuya alındığında (media_player → off/standby) ve hava hâlâ karanlıksa
+    spotu kapatır — yatma vakti sayılır. Parlaklık ve renk sıcaklığını adaptif ışık
+    otomasyonu belirler; bu yüzden ışık yalnızca KAPALIYKEN açılır, böylece elle ayarlanmış
+    bir renk ezilmez.
+  triggers:
+  - trigger: state
+    entity_id: media_player.living_room_living_room
+    to: playing
+    id: play
+  - trigger: state
+    entity_id: media_player.living_room_living_room
+    to:
+    - 'off'
+    - standby
+    not_from:
+    - unavailable
+    - unknown
+    for:
+      seconds: 30
+    id: sleep
+  - trigger: state
+    entity_id: sun.sun
+    to: below_horizon
+    id: sunset
+  conditions: []
+  actions:
+  - choose:
+    - conditions:
+      - condition: or
+        conditions:
+        - condition: trigger
+          id:
+          - play
+        - condition: and
+          conditions:
+          - condition: trigger
+            id:
+            - sunset
+          - condition: state
+            entity_id: media_player.living_room_living_room
+            state: playing
+      - condition: state
+        entity_id: sun.sun
+        state: below_horizon
+      - condition: state
+        entity_id: light.tv_dixon_hue
+        state: 'off'
+      sequence:
+      - action: light.turn_on
+        target:
+          entity_id: light.tv_dixon_hue
+    - conditions:
+      - condition: trigger
+        id:
+        - sleep
+      - condition: state
+        entity_id: sun.sun
+        state: below_horizon
+      - condition: state
+        entity_id: light.tv_dixon_hue
+        state: 'on'
+      sequence:
+      - action: light.turn_off
+        target:
+          entity_id: light.tv_dixon_hue
+        data:
+          transition: 4
+  mode: restart
+- id: '1789742473669'
+  alias: Camasir_open
+  description: ''
+  triggers:
+  - trigger: door.opened
+    target:
+      entity_id: binary_sensor.camasir_kapi_sensor_contact
+    options:
+      behavior: each
+      for: 00:00:00
+  conditions: []
+  actions:
+  - action: switch.turn_on
+    metadata: {}
+    target:
+      entity_id: switch.camasir_aydinlatma
+    data: {}
+  mode: single
+- id: '1789765293117'
+  alias: Camasir_close
+  description: 5 dakika sonra Çamaşır ışığını kapatır (kapı kapandıktan sonra) — aynı
+    devredeki aspiratörün havayı temizlemesi için süre tanır. Kapı bu süre içinde
+    tekrar açılırsa iptal olur.
+  triggers:
+  - trigger: door.closed
+    target:
+      entity_id: binary_sensor.camasir_kapi_sensor_contact
+    options:
+      behavior: each
+      for: 00:00:00
+  conditions: []
+  actions:
+  - delay: 00:05:00
+  - condition: state
+    entity_id: binary_sensor.camasir_kapi_sensor_contact
+    state: 'off'
+  - action: switch.turn_off
+    target:
+      entity_id: switch.camasir_aydinlatma
+    data: {}
+  mode: restart
+- id: '1789765550243'
+  alias: Camasir_open_timeout
+  description: Kapı 5 dakika boyunca kesintisiz açık kalırsa (kapanmasını beklemeden)
+    Çamaşır ışığını (ve aynı devredeki aspiratörü) kapatır.
+  triggers:
+  - trigger: door.opened
+    target:
+      entity_id: binary_sensor.camasir_kapi_sensor_contact
+    options:
+      behavior: each
+      for: 00:05:00
+  conditions: []
+  actions:
+  - action: switch.turn_off
+    target:
+      entity_id: switch.camasir_aydinlatma
+    data: {}
+  mode: single
+- id: '1789765619817'
+  alias: Yatak_Odasi_Panjur_Sabah
+  description: Her sabah 08:45'te Yatak Odası panjurunu açar — mevcut durumuna bakmaksızın
+    (elle kapatılmış olsa bile).
+  triggers:
+  - trigger: time
+    at: 08:45:00
+  conditions: []
+  actions:
+  - action: cover.open_cover
+    target:
+      entity_id: cover.yatak_odasi_panjur
+    data: {}
+  mode: single
+- id: '1789931897022'
+  alias: Entrance Face Recognition - Emir Salon Lights
+  description: 'Turns on Salon L1 & L2 for 2 minutes and greets Emir through the entrance
+    camera speaker when Frigate recognizes his face at the entrance (tapo_kapi) camera
+    via MQTT frigate/events, then turns the lights off. NOTE: Frigate publishes after.sub_label
+    as a [name, score] LIST over MQTT (not a plain string like its REST API) - must
+    index [0]. Speaker requires media_player.entrance_camera_speaker (webrtc/go2rtc
+    tapo_kapi two-way audio) to exist - pending HA restart + go2rtc tapo:// source.'
+  triggers:
+  - trigger: mqtt
+    options:
+      topic: frigate/events
+      value_template: '{{ value_json.after.camera ~ ''|'' ~ value_json.after.label
+        ~ ''|'' ~ (value_json.after.sub_label[0] if value_json.after.sub_label else
+        '''') }}'
+      payload: entrance|person|Emir
+  conditions: []
+  actions:
+  - action: tts.speak
+    target:
+      entity_id: tts.google_translate_en_com
+    data:
+      media_player_entity_id: media_player.entrance_camera_speaker
+      message: Welcome Home
+  mode: restart

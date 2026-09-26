@@ -1,0 +1,132 @@
+- id: sahne_film
+  name: Film
+  entities:
+    switch.salon_aydinlatma_l1: 'off'
+    switch.salon_aydinlatma_l2: 'off'
+    switch.tv_aydinlatma_l1: 'off'
+    switch.tv_aydinlatma_l2: 'off'
+    light.tv_dixon_hue:
+      state: 'on'
+      color_temp_kelvin: 2200
+      brightness: 51
+    light.beyaz_aplik_hue: 'off'
+    light.bitki_hasir_hue: 'off'
+    light.tv_yer: 'off'
+    light.kartel_salon: 'off'
+    light.salon_calisma_masasi: 'off'
+  icon: mdi:movie-open
+- id: sahne_yemek
+  name: Yemek
+  entities:
+    switch.salon_aydinlatma_l1: 'on'
+    switch.salon_aydinlatma_l2: 'on'
+    switch.tv_aydinlatma_l1: 'off'
+    switch.tv_aydinlatma_l2: 'off'
+    light.kartel_salon:
+      state: 'on'
+      brightness: 255
+    light.tv_dixon_hue:
+      state: 'on'
+      color_temp_kelvin: 2700
+      brightness: 179
+    light.beyaz_aplik_hue:
+      state: 'on'
+      color_temp_kelvin: 2700
+      brightness: 179
+    light.bitki_hasir_hue:
+      state: 'on'
+      color_temp_kelvin: 2700
+      brightness: 179
+  icon: mdi:silverware-fork-knife
+- id: sahne_misafir
+  name: Misafir
+  entities:
+    switch.salon_aydinlatma_l1: 'on'
+    switch.salon_aydinlatma_l2: 'on'
+    switch.tv_aydinlatma_l1: 'on'
+    switch.tv_aydinlatma_l2: 'on'
+    light.tv_dixon_hue:
+      state: 'on'
+      color_temp_kelvin: 2700
+      brightness: 255
+    light.beyaz_aplik_hue:
+      state: 'on'
+      color_temp_kelvin: 2700
+      brightness: 255
+    light.bitki_hasir_hue:
+      state: 'on'
+      color_temp_kelvin: 2700
+      brightness: 255
+    light.tv_yer:
+      state: 'on'
+      color_temp_kelvin: 2700
+      brightness: 255
+    light.kartel_salon:
+      state: 'on'
+      brightness: 255
+    light.salon_calisma_masasi:
+      state: 'on'
+      brightness: 255
+  icon: mdi:account-group
+- id: sahne_gece
+  name: Gece
+  entities:
+    switch.salon_aydinlatma_l1: 'off'
+    switch.salon_aydinlatma_l2: 'off'
+    switch.tv_aydinlatma_l1: 'off'
+    switch.tv_aydinlatma_l2: 'off'
+    light.tv_dixon_hue: 'off'
+    light.beyaz_aplik_hue: 'off'
+    light.bitki_hasir_hue: 'off'
+    light.tv_yer: 'off'
+    light.kartel_salon:
+      state: 'on'
+      brightness: 255
+    light.salon_calisma_masasi: 'off'
+  icon: mdi:weather-night
+- id: sahne_sabah
+  name: Sabah
+  entities:
+    switch.salon_aydinlatma_l1: 'off'
+    switch.salon_aydinlatma_l2: 'off'
+    switch.tv_aydinlatma_l1: 'off'
+    switch.tv_aydinlatma_l2: 'off'
+    light.tv_dixon_hue: 'off'
+    light.beyaz_aplik_hue: 'off'
+    light.bitki_hasir_hue: 'off'
+    light.tv_yer: 'off'
+    light.kartel_salon: 'off'
+    light.salon_calisma_masasi: 'off'
+    switch.mutfak_aydinlatma_l1: 'off'
+    switch.mutfak_aydinlatma_l2: 'on'
+  icon: mdi:coffee
+- id: sahne_aksam
+  name: Akşam
+  entities:
+    switch.salon_aydinlatma_l1: 'off'
+    switch.salon_aydinlatma_l2: 'off'
+    switch.tv_aydinlatma_l1: 'off'
+    switch.tv_aydinlatma_l2: 'off'
+    light.tv_dixon_hue:
+      state: 'on'
+      color_temp_kelvin: 2237
+      brightness: 181
+    light.beyaz_aplik_hue:
+      state: 'on'
+      color_temp_kelvin: 2702
+      brightness: 184
+    light.bitki_hasir_hue:
+      state: 'on'
+      color_temp_kelvin: 2237
+      brightness: 38
+    light.tv_yer:
+      state: 'on'
+      color_temp_kelvin: 2702
+      brightness: 196
+    light.kartel_salon:
+      state: 'on'
+      brightness: 189
+    light.salon_calisma_masasi:
+      state: 'on'
+      brightness: 166
+  icon: mdi:lamps
