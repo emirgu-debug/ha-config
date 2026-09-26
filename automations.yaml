@@ -395,3 +395,28 @@
       media_player_entity_id: media_player.entrance_camera_speaker
       message: Welcome Home
   mode: restart
+- id: git_config_sync
+  alias: Git · /config saatlik yedek (GitHub)
+  description: Her saat :07de /config değişikliklerini emirgu-debug/ha-config reposuna
+    commit + push eder (shell_command.git_sync, whitelist .gitignore). Hata olursa
+    persistent notification düşer. Bkz. claude/git-config-repo.md
+  triggers:
+  - trigger: time_pattern
+    minutes: 7
+  conditions: []
+  actions:
+  - action: shell_command.git_sync
+    data:
+      message: Hourly auto-sync
+    response_variable: sync
+  - if:
+    - condition: template
+      value_template: '{{ sync.returncode != 0 }}'
+    then:
+    - action: persistent_notification.create
+      data:
+        title: Git yedek hatası
+        message: 'git_sync returncode {{ sync.returncode }}: {{ sync.stdout }} {{
+          sync.stderr }}'
+        notification_id: git_sync_error
+  mode: single
