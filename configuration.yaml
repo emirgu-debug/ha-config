@@ -17,3 +17,7 @@ media_player:
     name: Entrance Camera Speaker
     stream: tapo_kapi
     audio: pcma
+
+# /config -> GitHub mirror (see project doc claude/git-config-repo.md)
+shell_command:
+  git_sync: "sh /config/tools/git_sync.sh '{{ message | default('Auto sync') }}'"
