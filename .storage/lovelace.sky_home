@@ -6097,32 +6097,6 @@
                 {
                   "type": "custom:button-card",
                   "template": "home_base",
-                  "entity": "sensor.waze_anne_evi",
-                  "tap_action": {
-                    "action": "url",
-                    "url_path": "https://www.google.com/maps/dir/?api=1&destination=41.063497,29.00789&travelmode=driving"
-                  },
-                  "hold_action": {
-                    "action": "more-info",
-                    "entity": "sensor.waze_anne_evi"
-                  },
-                  "triggers_update": [
-                    "sensor.waze_anne_evi",
-                    "person.emir"
-                  ],
-                  "custom_fields": {
-                    "c": "[[[\n  const s   = states['sensor.waze_anne_evi'];\n  const p   = states['person.emir'];\n  const min = s ? parseFloat(s.state) : null;\n  const km  = s && s.attributes.distance != null ? s.attributes.distance : null;\n  const ok  = min != null && !isNaN(min);\n  const kmh = (ok && km) ? km / (min / 60) : null;\n\n  // Istanbul city driving: ~25 km/h+ is a clear run, under 15 is crawling\n  let cls = '', label = 'No data';\n  if (kmh != null) {\n    if (kmh >= 25)      { cls = 'ok';   label = 'Clear'; }\n    else if (kmh >= 15) { cls = 'warn'; label = 'Moderate'; }\n    else                { cls = 'bad';  label = 'Heavy'; }\n  }\n\n  const atMum = p && p.state === \"Nursel'in Evi\";\n  const eta = ok ? new Date(Date.now() + min * 60000)\n    .toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: hass.config.time_zone || 'Europe/Istanbul' }) : '—';\n\n  const ago = (t) => { const m = (Date.now() - new Date(t).getTime()) / 60000;\n    if (isNaN(m)) return '—'; if (m < 1) return 'just now';\n    if (m < 60) return Math.round(m) + ' min ago'; return Math.round(m / 60) + ' h ago'; };\n\n  const chip = (t, c) => '<span class=\"chip ' + (c || '') + '\">' + t + '</span>';\n\n  const head = '<div class=\"hd\"><ha-icon icon=\"mdi:home-heart\"></ha-icon>'\n    + '<div class=\"hn\">Nursel&#39;in Evi</div>'\n    + chip(atMum ? 'You are there' : label, atMum ? 'on' : cls) + '</div>';\n\n  if (atMum) {\n    return head + '<div class=\"anbig\"><span class=\"anv ok\">Arrived</span></div>'\n      + '<div class=\"ansub\">Gayrettepe · Vefabayırı Sk. 12</div>';\n  }\n\n  // traffic bar: full = free-flowing, shrinks as the trip slows down\n  const pct = kmh == null ? 0 : Math.max(6, Math.min(100, kmh / 35 * 100));\n\n  return head\n    + '<div class=\"anbig\"><span class=\"anv ' + cls + '\">' + (ok ? Math.round(min) : '—') + '</span>'\n    + '<span class=\"anu\">min</span>'\n    + '<span class=\"ankm\">' + (km != null ? km.toFixed(1) + ' km' : '') + '</span></div>'\n    + '<div class=\"antrack\"><div class=\"anfill ' + cls + '\" style=\"width:' + pct.toFixed(0) + '%\"></div></div>'\n    + '<div class=\"anrow\"><span>' + label + (kmh != null ? ' · ' + Math.round(kmh) + ' km/h' : '') + '</span>'\n    + '<span>arrive ~' + eta + '</span></div>'\n    + '<div class=\"anroute\">' + ((s && s.attributes.route) ? s.attributes.route.split(';')[0].trim() : 'no route') + '</div>'\n    + '<div class=\"anfoot\">Waze · updated ' + (s ? ago(s.last_changed) : '—') + ' · tap to navigate</div>';\n]]]"
-                  },
-                  "extra_styles": "\n    .hd { display:flex; align-items:center; gap: 8px; margin-bottom: 10px; } .hd ha-icon { --mdc-icon-size: 20px; color: #8ee05c; }\n    .hn { font-size: 18px; font-weight: 800; flex: 1; }\n    .chip { display:inline-block; padding: 3px 9px; border-radius: 99px; font-size: 11px; font-weight: 800; letter-spacing: .5px; background: rgba(255,255,255,.07); color: #aeb6c6; }\n    .chip.on { background: rgba(111,208,242,.16); color: #9fe2ff; } .chip.ok { background: rgba(142,224,92,.15); color: #a6ea7c; }\n    .chip.bad { background: rgba(224,119,111,.18); color: #ffab9f; } .chip.warn { background: rgba(231,183,95,.16); color: #f1cf8d; }\n    .anbig { display:flex; align-items: baseline; gap: 7px; margin: 2px 0 10px; }\n    .anv { font-size: 44px; font-weight: 800; line-height: 1; color: #ececec; }\n    .anv.ok { color: #a6ea7c; } .anv.warn { color: #f1cf8d; } .anv.bad { color: #ffab9f; }\n    .anu { font-size: 14px; font-weight: 800; color: #8e97ac; }\n    .ankm { margin-left: auto; font-size: 15px; font-weight: 800; color: #c9d0dc; }\n    .antrack { height: 8px; border-radius: 5px; background: rgba(255,255,255,.07); overflow: hidden; }\n    .anfill { height: 100%; border-radius: 5px; background: #8e97ac; transition: width 1.4s ease; }\n    .anfill.ok { background: linear-gradient(90deg, #6fd0f2, #8ee05c); }\n    .anfill.warn { background: linear-gradient(90deg, #e7b75f, #f1cf8d); }\n    .anfill.bad { background: linear-gradient(90deg, #e0776f, #ff9b8f); }\n    .anrow { display:flex; justify-content: space-between; margin-top: 7px; font-size: 11px; font-weight: 800; letter-spacing: .3px; color: #8e97ac; }\n    .anroute { margin-top: 7px; font-size: 12px; font-weight: 700; color: #c9d0dc;\n      overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }\n    .anfoot { margin-top: 5px; font-size: 9.5px; font-weight: 800; letter-spacing: .7px; color: #6f768a; text-transform: uppercase; }\n"
-                }
-              ]
-            },
-            {
-              "type": "grid",
-              "cards": [
-                {
-                  "type": "custom:button-card",
-                  "template": "home_base",
                   "entity": "sensor.dishwasher",
                   "triggers_update": [
                     "sensor.dishwasher",
