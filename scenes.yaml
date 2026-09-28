@@ -81,8 +81,13 @@
     light.tv_yer: 'off'
     light.kartel_salon:
       state: 'on'
-      brightness: 255
+      brightness: 38
     light.salon_calisma_masasi: 'off'
+    light.kitchen_hue: 'off'
+    switch.mutfak_aydinlatma_l1: 'off'
+    switch.mutfak_aydinlatma_l2: 'off'
+    media_player.living_room_living_room: 'off'
+    media_player.34_odyssey_oled_g8_ls34bg850suxuf: 'off'
   icon: mdi:weather-night
 - id: sahne_sabah
   name: Sabah
