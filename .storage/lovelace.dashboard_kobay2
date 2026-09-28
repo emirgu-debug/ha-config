@@ -618,6 +618,15 @@
                       },
                       "entity": "switch.kedi_mama_otomat_priz",
                       "icon": "mdi:power-plug"
+                    },
+                    {
+                      "type": "state-icon",
+                      "style": {
+                        "left": "95%",
+                        "top": "33%"
+                      },
+                      "entity": "light.kitchen_hue",
+                      "icon": "mdi:floor-lamp"
                     }
                   ],
                   "grid_options": {

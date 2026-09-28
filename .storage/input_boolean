@@ -23,6 +23,11 @@
         "id": "giris_kamera_canli_izleme",
         "name": "Giris Kamera Canli Izleme",
         "icon": "mdi:cctv"
+      },
+      {
+        "id": "panjur_tv_apple_tv_kapatti",
+        "name": "Panjur TV Apple TV Kapattı",
+        "icon": "mdi:window-shutter-cog"
       }
     ]
   }

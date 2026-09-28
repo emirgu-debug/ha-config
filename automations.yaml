@@ -61,42 +61,88 @@
   mode: single
 - id: '1789070241083'
   alias: Apple TV Playback - PANJUR_TV Shutter
-  description: Closes PANJUR_TV when the Apple TV (Living Room) starts playing, but
-    only during the day (before sunset). Reopens it if playback stays paused/stopped
-    for 10 minutes.
+  description: 'Gündüz Apple TV''de video başlayınca PANJUR_TV''yi kapatır (Apple
+    Music ve AirPlay hariç). Oynatma 30 dk durursa/boşta kalırsa/kapanırsa veya gün
+    batımında, sadece kendisi kapattıysa (input_boolean.panjur_tv_apple_tv_kapatti)
+    açar. not_from unavailable/unknown: HA restart veya Apple TV bağlantı kopması
+    panjuru hareket ettirmez. Güncelleme: 28 Eyl 2026.'
   triggers:
-  - platform: state
+  - trigger: state
     entity_id: media_player.living_room_living_room
     to: playing
+    not_from:
+    - unavailable
+    - unknown
     id: play
-  - platform: state
+  - trigger: state
+    entity_id: media_player.living_room_living_room
+    attribute: app_id
+    from:
+    - com.apple.TVMusic
+    - com.apple.TVAirPlay
+    id: play
+  - trigger: state
     entity_id: media_player.living_room_living_room
     to:
     - paused
     - idle
+    - 'off'
+    not_from:
+    - unavailable
+    - unknown
     for:
-      minutes: 10
+      minutes: 30
     id: stop
+  - trigger: sun
+    event: sunset
+    id: sunset
   conditions: []
   actions:
   - choose:
-    - conditions:
+    - alias: Kapat
+      conditions:
       - condition: trigger
         id: play
       - condition: state
+        entity_id: media_player.living_room_living_room
+        state: playing
+      - condition: state
         entity_id: sun.sun
         state: above_horizon
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: media_player.living_room_living_room
+          attribute: app_id
+          state:
+          - com.apple.TVMusic
+          - com.apple.TVAirPlay
+      - condition: state
+        entity_id: cover.panjur_tv
+        state: open
       sequence:
-      - target:
+      - action: input_boolean.turn_on
+        target:
+          entity_id: input_boolean.panjur_tv_apple_tv_kapatti
+      - action: cover.close_cover
+        target:
           entity_id: cover.panjur_tv
-        action: cover.close_cover
-    - conditions:
+    - alias: Aç
+      conditions:
       - condition: trigger
-        id: stop
+        id:
+        - stop
+        - sunset
+      - condition: state
+        entity_id: input_boolean.panjur_tv_apple_tv_kapatti
+        state: 'on'
       sequence:
-      - target:
+      - action: input_boolean.turn_off
+        target:
+          entity_id: input_boolean.panjur_tv_apple_tv_kapatti
+      - action: cover.open_cover
+        target:
           entity_id: cover.panjur_tv
-        action: cover.open_cover
   mode: restart
 - id: '1789105284347'
   alias: Leyla Oda Dyson Sicaklik - LEYLA_Klima Kontrol
