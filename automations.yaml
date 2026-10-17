@@ -514,3 +514,27 @@
           target:
             entity_id: switch.mutfak_aydinlatma_l2
   mode: single
+- id: is_odasi_hareket_isik
+  alias: İş Odası · Hareket → Işıklar 5 dk
+  description: 'Motion_Sensor_1 hareket algılayınca Is_Odasi_Aydinlatma ve Is_odasi_giris_AYDINLATMA
+    açılır; 5 dakika sonra kapanır. Hareket devam ederse süre yeniden başlar (mode:
+    restart).'
+  triggers:
+  - trigger: occupancy.detected
+    target:
+      entity_id: binary_sensor.motion_sensor_1_occupancy
+  conditions: []
+  actions:
+  - action: switch.turn_on
+    target:
+      entity_id:
+      - switch.is_odasi_aydinlatma
+      - switch.is_odasi_giris_aydinlatma
+  - delay:
+      minutes: 5
+  - action: switch.turn_off
+    target:
+      entity_id:
+      - switch.is_odasi_aydinlatma
+      - switch.is_odasi_giris_aydinlatma
+  mode: restart
