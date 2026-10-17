@@ -515,8 +515,8 @@
             entity_id: switch.mutfak_aydinlatma_l2
   mode: single
 - id: is_odasi_hareket_isik
-  alias: İş Odası · Hareket → Işıklar 5 dk
-  description: 'Motion_Sensor_1 hareket görünce iki iş odası ışığını 5 dk açar. Kapatma
+  alias: İş Odası · Hareket → Işıklar 1 dk
+  description: 'Motion_Sensor_1 hareket görünce iki iş odası ışığını 1 dk açar. Kapatma
     adımı doğrulamalı: ZBMINIL2 uç cihazlar bazen durum raporunu düşürüyor; 3 denemeye
     kadar turn_off + Z2M get ile gerçek durum çekilir.'
   triggers:
@@ -532,7 +532,7 @@
       - switch.is_odasi_aydinlatma
       - switch.is_odasi_giris_aydinlatma
   - delay:
-      minutes: 5
+      minutes: 1
   - alias: Kapat ve doğrula (en fazla 3 deneme)
     repeat:
       sequence:
