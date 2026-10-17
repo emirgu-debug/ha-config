@@ -628,6 +628,24 @@
                       },
                       "entity": "light.kitchen_hue",
                       "icon": "mdi:floor-lamp"
+                    },
+                    {
+                      "type": "state-icon",
+                      "style": {
+                        "left": "45%",
+                        "top": "48%"
+                      },
+                      "entity": "binary_sensor.motion_sensor_1_occupancy",
+                      "icon": "mdi:motion-sensor",
+                      "state_color": true
+                    },
+                    {
+                      "type": "state-label",
+                      "style": {
+                        "left": "95%",
+                        "top": "53%"
+                      },
+                      "entity": "sensor.toprak_sensor_02_soil_moisture"
                     }
                   ],
                   "grid_options": {

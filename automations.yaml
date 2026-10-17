@@ -516,25 +516,52 @@
   mode: single
 - id: is_odasi_hareket_isik
   alias: İş Odası · Hareket → Işıklar 5 dk
-  description: 'Motion_Sensor_1 hareket algılayınca Is_Odasi_Aydinlatma ve Is_odasi_giris_AYDINLATMA
-    açılır; 5 dakika sonra kapanır. Hareket devam ederse süre yeniden başlar (mode:
-    restart).'
+  description: 'Motion_Sensor_1 hareket görünce iki iş odası ışığını 5 dk açar. Kapatma
+    adımı doğrulamalı: ZBMINIL2 uç cihazlar bazen durum raporunu düşürüyor; 3 denemeye
+    kadar turn_off + Z2M get ile gerçek durum çekilir.'
   triggers:
   - trigger: occupancy.detected
     target:
       entity_id: binary_sensor.motion_sensor_1_occupancy
   conditions: []
   actions:
-  - action: switch.turn_on
+  - alias: Işıkları aç
+    action: switch.turn_on
     target:
       entity_id:
       - switch.is_odasi_aydinlatma
       - switch.is_odasi_giris_aydinlatma
   - delay:
       minutes: 5
-  - action: switch.turn_off
-    target:
-      entity_id:
-      - switch.is_odasi_aydinlatma
-      - switch.is_odasi_giris_aydinlatma
+  - alias: Kapat ve doğrula (en fazla 3 deneme)
+    repeat:
+      sequence:
+      - action: switch.turn_off
+        target:
+          entity_id:
+          - switch.is_odasi_aydinlatma
+          - switch.is_odasi_giris_aydinlatma
+      - delay:
+          seconds: 4
+      - alias: Cihazlardan gerçek durumu iste
+        action: mqtt.publish
+        data:
+          topic: zigbee2mqtt/Is_Odasi_Aydinlatma/get
+          payload: '{"state":""}'
+      - action: mqtt.publish
+        data:
+          topic: zigbee2mqtt/Is_odasi_giris_AYDINLATMA/get
+          payload: '{"state":""}'
+      - delay:
+          seconds: 3
+      until:
+      - condition: or
+        conditions:
+        - condition: state
+          entity_id:
+          - switch.is_odasi_aydinlatma
+          - switch.is_odasi_giris_aydinlatma
+          state: 'off'
+        - condition: template
+          value_template: '{{ repeat.index >= 3 }}'
   mode: restart
