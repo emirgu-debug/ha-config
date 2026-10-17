@@ -518,12 +518,17 @@
   alias: İş Odası · Hareket → Işıklar 1 dk
   description: 'Motion_Sensor_1 hareket görünce iki iş odası ışığını 1 dk açar. Kapatma
     adımı doğrulamalı: ZBMINIL2 uç cihazlar bazen durum raporunu düşürüyor; 3 denemeye
-    kadar turn_off + Z2M get ile gerçek durum çekilir.'
+    kadar turn_off + Z2M get ile gerçek durum çekilir. Gece 21:00–09:00 arası koşul
+    yüzünden çalışmaz (kediler).'
   triggers:
   - trigger: occupancy.detected
     target:
       entity_id: binary_sensor.motion_sensor_1_occupancy
-  conditions: []
+  conditions:
+  - alias: Sadece gündüz 09:00–21:00 (gece kediler tetiklemesin)
+    condition: time
+    after: 09:00:00
+    before: '21:00:00'
   actions:
   - alias: Işıkları aç
     action: switch.turn_on
