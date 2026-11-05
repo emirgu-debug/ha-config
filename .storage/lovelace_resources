@@ -6,42 +6,42 @@
     "items": [
       {
         "id": "f41a37db71bb43dba68cc3c0eca8a728",
-        "url": "/hacsfiles/mushroom-strategy/mushroom-strategy.js?hacstag=619284862320",
+        "url": "/local/community/mushroom-strategy/mushroom-strategy.js?v=619284862320",
         "type": "module"
       },
       {
         "id": "537d49fc153b4806ad169fe7a2c60095",
-        "url": "/hacsfiles/weather-radar-card/weather-radar-card.js?hacstag=4876809713130",
+        "url": "/local/community/weather-radar-card/weather-radar-card.js?v=487680971400",
         "type": "module"
       },
       {
         "id": "492bff8565a2428dbb62ed4236576c04",
-        "url": "/hacsfiles/dwains-dashboard-next/dwains-dashboard-next.js?hacstag=12743216191122",
+        "url": "/local/community/dwains-dashboard-next/dwains-dashboard-next.js?v=12743216191122",
         "type": "module"
       },
       {
         "id": "f04abf9538a24374a75125e432fa31a5",
-        "url": "/hacsfiles/homeassistant-fe-tesla/tesla-card.js?hacstag=642725487104",
+        "url": "/local/community/homeassistant-fe-tesla/tesla-card.js?v=642725487104",
         "type": "module"
       },
       {
         "id": "1a455482ef7144b38fc186b0183a59df",
-        "url": "/hacsfiles/vehicle-status-card/vehicle-status-card.js?hacstag=8593716631261",
+        "url": "/local/community/vehicle-status-card/vehicle-status-card.js?v=8593716631261",
         "type": "module"
       },
       {
         "id": "73f422c92e3f4b149d886f1169863acb",
-        "url": "/hacsfiles/ha-floorplan/floorplan.js?hacstag=188323494115",
+        "url": "/local/community/ha-floorplan/floorplan.js?v=188323494115",
         "type": "module"
       },
       {
         "id": "b67f39ff1dcd46428958f57b473aaec6",
-        "url": "/hacsfiles/lovelace-card-mod/card-mod.js?hacstag=190927524421",
+        "url": "/local/community/lovelace-card-mod/card-mod.js?v=190927524421",
         "type": "module"
       },
       {
         "id": "110685becb1644e097cfe796e83681e5",
-        "url": "/hacsfiles/button-card/button-card.js?hacstag=146194325701",
+        "url": "/local/community/button-card/button-card.js?v=146194325701",
         "type": "module"
       },
       {
@@ -51,12 +51,12 @@
       },
       {
         "id": "2ec18fdebc8142a9ac8ceaa9fb353aac",
-        "url": "/hacsfiles/Bubble-Card/bubble-card.js?hacstag=680112919342",
+        "url": "/local/community/Bubble-Card/bubble-card.js?v=680112919343",
         "type": "module"
       },
       {
         "id": "6947df12c44f48718358391d2ac4df68",
-        "url": "/hacsfiles/Google-Map-Card/google-maps-card.js?hacstag=1005504308603",
+        "url": "/local/community/Google-Map-Card/google-maps-card.js?v=1005504308603",
         "type": "module"
       },
       {
@@ -66,7 +66,7 @@
       },
       {
         "id": "bd265ccb89e3455ba1728733740b48d6",
-        "url": "/hacsfiles/tesla-fleet-homeassistant/tesla-fleet-card.js?hacstag=13516228621113",
+        "url": "/local/community/tesla-fleet-homeassistant/tesla-fleet-card.js?v=13516228621113",
         "type": "module"
       }
     ]
