@@ -236,8 +236,8 @@
                       "type": "state-label",
                       "entity": "sensor.oda_sicaklik_nem_ekransiz_temperature",
                       "style": {
-                        "top": "78%",
-                        "left": "11%",
+                        "top": "69.8%",
+                        "left": "12.8%",
                         "color": "white",
                         "--mdc-icon-size": "35px",
                         "cursor": "pointer",
@@ -379,8 +379,8 @@
                       "entity": "light.tv_dixon_hue",
                       "icon": "mdi:floor-lamp-torchiere",
                       "style": {
-                        "top": "91%",
-                        "left": "44%",
+                        "top": "78.3%",
+                        "left": "43.7%",
                         "--mdc-icon-size": "25px"
                       }
                     },
@@ -418,7 +418,7 @@
                         "left": "73.2%",
                         "top": "48.4%"
                       },
-                      "entity": "light.tv_yer",
+                      "entity": "light.bufe_arkasi_yer",
                       "icon": "mdi:lightbulb"
                     },
                     {
@@ -451,8 +451,8 @@
                     {
                       "type": "state-label",
                       "style": {
-                        "left": "76%",
-                        "top": "74%",
+                        "left": "77.3%",
+                        "top": "69.8%",
                         "cursor": "pointer",
                         "background": "rgba(13,18,27,.55)",
                         "padding": "2px 7px",
@@ -488,8 +488,8 @@
                     {
                       "type": "state-label",
                       "style": {
-                        "left": "31%",
-                        "top": "79%",
+                        "left": "31.3%",
+                        "top": "73.2%",
                         "cursor": "pointer",
                         "background": "rgba(13,18,27,.55)",
                         "padding": "2px 7px",
@@ -508,8 +508,8 @@
                     {
                       "type": "state-label",
                       "style": {
-                        "left": "89%",
-                        "top": "89%"
+                        "left": "88%",
+                        "top": "85.4%"
                       },
                       "entity": "sensor.toprak_sensor_01_soil_moisture"
                     },
@@ -642,8 +642,8 @@
                     {
                       "type": "state-label",
                       "style": {
-                        "left": "95%",
-                        "top": "53%"
+                        "left": "93%",
+                        "top": "54%"
                       },
                       "entity": "sensor.toprak_sensor_02_soil_moisture"
                     }
