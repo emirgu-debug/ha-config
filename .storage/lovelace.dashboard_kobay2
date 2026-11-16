@@ -415,8 +415,8 @@
                     {
                       "type": "state-icon",
                       "style": {
-                        "left": "56%",
-                        "top": "91%"
+                        "left": "73.2%",
+                        "top": "48.4%"
                       },
                       "entity": "light.tv_yer",
                       "icon": "mdi:lightbulb"
