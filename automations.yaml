@@ -379,24 +379,6 @@
       entity_id: switch.camasir_aydinlatma
     data: {}
   mode: single
-- id: '1789765550243'
-  alias: Camasir_open_timeout
-  description: Kapı 5 dakika boyunca kesintisiz açık kalırsa (kapanmasını beklemeden)
-    Çamaşır ışığını (ve aynı devredeki aspiratörü) kapatır.
-  triggers:
-  - trigger: door.opened
-    target:
-      entity_id: binary_sensor.camasir_kapi_sensor_contact
-    options:
-      behavior: each
-      for: 00:05:00
-  conditions: []
-  actions:
-  - action: switch.turn_off
-    target:
-      entity_id: switch.camasir_aydinlatma
-    data: {}
-  mode: single
 - id: '1789765619817'
   alias: Yatak_Odasi_Panjur_Sabah
   description: Her sabah 08:45'te Yatak Odası panjurunu açar — mevcut durumuna bakmaksızın
@@ -565,3 +547,55 @@
         - condition: template
           value_template: '{{ repeat.index >= 3 }}'
   mode: restart
+- id: '1795187491830'
+  alias: Dugme_1 - Leyla Panjur
+  description: 'Dugme_1 (SONOFF kablosuz düğme): tek basış Leyla_Panjur kapat, çift
+    basış durdur, uzun basış aç.'
+  triggers:
+  - trigger: device
+    domain: mqtt
+    device_id: 46cb8c5ccf0d84d21cc4ec09e2dae86d
+    type: action
+    subtype: single
+    id: single
+  - trigger: device
+    domain: mqtt
+    device_id: 46cb8c5ccf0d84d21cc4ec09e2dae86d
+    type: action
+    subtype: double
+    id: double
+  - trigger: device
+    domain: mqtt
+    device_id: 46cb8c5ccf0d84d21cc4ec09e2dae86d
+    type: action
+    subtype: long
+    id: long
+  conditions: []
+  actions:
+  - choose:
+    - alias: 'Tek basış: kapat'
+      conditions:
+      - condition: trigger
+        id: single
+      sequence:
+      - action: cover.close_cover
+        target:
+          entity_id: cover.leyla_panjur
+    - alias: 'Çift basış: durdur'
+      conditions:
+      - condition: trigger
+        id: double
+      sequence:
+      - action: cover.stop_cover
+        target:
+          entity_id: cover.leyla_panjur
+    - alias: 'Uzun basış: aç'
+      conditions:
+      - condition: trigger
+        id: long
+      sequence:
+      - action: cover.open_cover
+        target:
+          entity_id: cover.leyla_panjur
+  mode: queued
+  max: 5

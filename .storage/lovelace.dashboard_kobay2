@@ -642,8 +642,8 @@
                     {
                       "type": "state-label",
                       "style": {
-                        "left": "93%",
-                        "top": "54%"
+                        "left": "73.3%",
+                        "top": "53.2%"
                       },
                       "entity": "sensor.toprak_sensor_02_soil_moisture"
                     }
