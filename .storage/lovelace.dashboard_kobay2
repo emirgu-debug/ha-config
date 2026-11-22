@@ -614,8 +614,8 @@
                     {
                       "type": "state-icon",
                       "style": {
-                        "left": "33.2%",
-                        "top": "49.2%"
+                        "left": "96%",
+                        "top": "73.6%"
                       },
                       "entity": "switch.kedi_mama_otomat_priz",
                       "icon": "mdi:power-plug"
